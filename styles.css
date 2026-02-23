@@ -451,25 +451,11 @@ code {
   .logo-icon { font-size: 1.5rem; }
 }
 
-.bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(90deg, rgba(13,17,23,0.95), rgba(22,27,34,0.95));
-  border-top: 1px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  gap: 1rem;
-  z-index: 110;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  box-shadow: 0 -6px 18px rgba(0,0,0,0.06);
-}
+/* Footer removed - no bottom bar */
 
-.content-area { padding-bottom: 92px; }
+
+.content-area { padding-bottom: 2rem; }
+
 
 /* Mobile nav open state: show header-middle as dropdown */
 
@@ -515,14 +501,6 @@ code {
 /* Footer stacking on small screens */
 /* Expand mobile breakpoint to include larger iPhones (e.g. iPhone Pro Max) */
 @media (max-width: 768px) {
-  .bottom-bar {
-    display: none; /* hidden on small/mobile screens per request */
-  }
-  .bottom-item { font-size: 0.95rem; display:block; width:100%; }
-  .bottom-item a { color: inherit; }
-  .bottom-item strong { display:inline-block; }
-  .content-area { padding-bottom: 220px; }
-
   .top-header {
     height: 56px;
     padding: 0 0.75rem;
@@ -552,20 +530,12 @@ code {
 }
 
 @media (max-width: 480px) {
-  .content-area { padding-bottom: 260px; }
+  .page-title { font-size: 1.8rem; }
 }
+
 
 .bottom-item { display: flex; align-items:center; gap:0.5rem; }
 .bottom-item strong { color: var(--text-main); font-weight:600; }
-
-/* Ensure bottom-bar is readable in light theme */
-.light-theme .bottom-bar {
-  background: linear-gradient(90deg, rgba(255,255,255,0.98), rgba(245,247,250,0.98));
-  border-top: 1px solid var(--border-color);
-  color: var(--text-main);
-}
-
-.light-theme .bottom-item strong { color: var(--accent-color); }
 
 
 
