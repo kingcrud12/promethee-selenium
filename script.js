@@ -208,10 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
         }
 
+        const headerLeft = header.querySelector('.header-left');
         const headerRight = header.querySelector('.header-right');
-        if (headerRight && !headerRight.contains(menuToggle)) {
+        // Prefer inserting the toggle into header-left before the logo for better UX on mobile
+        if (headerLeft && !headerLeft.contains(menuToggle)) {
+            headerLeft.insertBefore(menuToggle, headerLeft.firstChild);
+        } else if (headerRight && !headerRight.contains(menuToggle)) {
             headerRight.insertBefore(menuToggle, headerRight.firstChild);
-        } else if (!headerRight) {
+        } else if (!headerLeft && !headerRight) {
             header.appendChild(menuToggle);
         }
 
