@@ -399,7 +399,7 @@ code {
   display: block;
 }
 
-/* Responsive layout and mobile bottom bar */
+/* Responsive layout for mobile screens */
 @media (max-width: 900px) {
   .left-sidebar, .right-sidebar {
     display: none;
@@ -408,9 +408,11 @@ code {
   .content-area {
     margin-left: 0;
     margin-right: 0;
-    padding: 1.5rem;
-    max-width: none;
+    padding: 1rem;
+    max-width: 100%;
     box-sizing: border-box;
+    padding-bottom: 2rem;
+    width: 100%;
   }
 
   .top-header {
@@ -426,8 +428,9 @@ code {
     font-size: 1.25rem;
   }
 
-  .header-middle {
-    display: none;
+  /* Hide large-screen buttons - will appear in burger menu */
+  .lang-toggle, .theme-toggle, .btn-download {
+    display: none !important;
   }
 
   .header-right {
@@ -442,25 +445,78 @@ code {
 
   .code-block {
     padding: 1rem;
+    margin: 1rem 0;
   }
-}
 
-/* Very small screens: shorten logo text */
-@media (max-width: 420px) {
-  .logo-text { display: none; }
-  .logo-icon { font-size: 1.5rem; }
-}
+  /* Page title responsive */
+  .page-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 
-/* Footer removed - no bottom bar */
+  /* Intro text responsive */
+  .intro-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 
+  /* Document content headings responsive */
+  .document-content h2 {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 
-.content-area { padding-bottom: 2rem; }
+  .document-content h3 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 
+  /* Breadcrumbs */
+  .breadcrumbs {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+    word-wrap: break-word;
+  }
 
-/* Mobile nav open state: show header-middle as dropdown */
+  /* Lists and paragraphs */
+  .document-content p {
+    font-size: 0.95rem;
+    margin: 1rem 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 
-@media (max-width: 900px) {
-  .menu-toggle { display: inline-flex; }
+  .document-content ul,
+  .document-content ol {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .document-content li {
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Code blocks responsive */
+  code {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+
+  /* Show hamburger menu toggle on mobile ONLY */
+  .menu-toggle { 
+    display: inline-flex !important; 
+  }
+
+  /* Navigation dropdown menu */
   .header-middle {
     display: none;
     position: absolute;
@@ -472,21 +528,159 @@ code {
     -webkit-backdrop-filter: blur(8px);
     z-index: 200;
     flex-direction: column;
-    padding: 1rem;
-    gap: 0.75rem;
+    padding: 0.75rem 0;
+    gap: 0;
     border-bottom: 1px solid var(--border-color);
+    max-height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
   }
 
   .mobile-nav-open .header-middle {
-    display: flex;
+    display: flex !important;
   }
 
-  .header-middle a { padding: 0.5rem 0.75rem; border-radius: 6px; }
+  /* Navigation links in header-middle */
+  .header-middle .nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+    border: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.2s;
+    margin: 0;
+  }
+  
+  .header-middle .nav-link:hover {
+    background-color: var(--bg-secondary);
+    color: var(--accent-color);
+  }
+  
+  .header-middle a { 
+    text-decoration: none;
+  }
+  
+  /* Mobile menu controls (toggles + download in burger menu) - VISIBLE ON MOBILE */
+  .mobile-menu-controls {
+    display: none !important;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin: 1rem 0 0 0;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .mobile-nav-open .mobile-menu-controls {
+    display: flex !important;
+  }
+
+  .mobile-menu-controls > * {
+    display: block !important;
+    width: 100%;
+  }
+  
+  .mobile-menu-controls button,
+  .mobile-menu-controls a {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mobile-menu-controls button:hover,
+  .mobile-menu-controls a:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+  
+  /* Mobile sidebar sections - VISIBLE ON MOBILE */
+  .mobile-sidebar-section {
+    display: none !important;
+    margin: 1rem 1rem 0 1rem;
+    padding: 1rem 0 0 0;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav-open .mobile-sidebar-section {
+    display: block !important;
+  }
+
+  .mobile-sidebar-section .section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin: 0.75rem 0 0.75rem 0;
+    padding: 0;
+    cursor: default;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Hide chevron icons on mobile */
+  .mobile-sidebar-section .section-title i {
+    display: none !important;
+  }
+
+  .mobile-sidebar-section .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .mobile-sidebar-section .nav-item {
+    display: block;
+    padding: 0.6rem 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-radius: 0;
+    transition: all 0.2s;
+    text-align: left;
+  }
+
+  .mobile-sidebar-section .nav-item:hover {
+    color: var(--accent-color);
+    padding-left: 0.25rem;
+  }
+
+  .mobile-sidebar-section .nav-item.active {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+  }
 }
 
-/* Menu toggle style */
+/* Very small screens: shorten logo text */
+@media (max-width: 420px) {
+  .logo-text { display: none; }
+  .logo-icon { font-size: 1.5rem; }
+}
+
+/* Footer removed - no bottom bar */
+
+.content-area { padding-bottom: 2rem; }
+
+
+/* Menu toggle style - visible on mobile, hidden on desktop */
 .menu-toggle {
-  display: none;
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-muted);
@@ -494,9 +688,39 @@ code {
   border-radius: 6px;
   margin-right: 0.5rem;
   cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.menu-toggle:hover {
+  color: var(--text-main);
+  border-color: var(--accent-color);
+}
+
+.menu-toggle i { 
+  font-size: 1rem; 
+  display: flex;
   align-items: center;
 }
-.menu-toggle i { font-size: 1rem; }
+
+/* Desktop: ensure hamburger is hidden */
+@media (min-width: 901px) {
+  .menu-toggle { 
+    display: none !important; 
+  }
+  
+  .mobile-menu-controls {
+    display: none !important;
+  }
+  
+  .mobile-sidebar-section {
+    display: none !important;
+  }
+}
+
 
 /* Footer stacking on small screens */
 /* Expand mobile breakpoint to include larger iPhones (e.g. iPhone Pro Max) */
@@ -530,7 +754,41 @@ code {
 }
 
 @media (max-width: 480px) {
-  .page-title { font-size: 1.8rem; }
+  .page-title { 
+    font-size: 1.5rem; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .document-content h2 {
+    font-size: 1.2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .document-content h3 {
+    font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .breadcrumbs {
+    font-size: 0.75rem;
+  }
+
+  .document-content p,
+  .document-content li {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  code {
+    font-size: 0.8rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
 }
 
 
@@ -650,4 +908,18 @@ code {
   .header-middle {
     display: none;
   }
+}
+
+/* Light theme mobile menu styling */
+.light-theme .mobile-menu-controls button,
+.light-theme .mobile-menu-controls a {
+  color: var(--text-main);
+  border-color: var(--border-color);
+  background: transparent;
+}
+
+.light-theme .mobile-menu-controls button:hover,
+.light-theme .mobile-menu-controls a:hover {
+  background: var(--bg-secondary);
+  border-color: var(--accent-color);
 }

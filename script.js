@@ -196,37 +196,149 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile menu toggle: create a hamburger button if not present
     (function() {
+        console.log('🍔 Mobile menu IIFE starting...');
+        
         const header = document.querySelector('.top-header');
-        if (!header) return;
+        if (!header) {
+            console.error('❌ Header not found');
+            return;
+        }
+        console.log('✅ Header found:', header);
 
         let menuToggle = document.getElementById('menu-toggle');
         if (!menuToggle) {
+            console.log('📝 Creating menu toggle button...');
             menuToggle = document.createElement('button');
             menuToggle.id = 'menu-toggle';
             menuToggle.setAttribute('aria-label', 'Toggle navigation');
             menuToggle.className = 'menu-toggle';
             menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            console.log('✅ Menu toggle button created');
         }
 
-        const headerLeft = header.querySelector('.header-left');
         const headerRight = header.querySelector('.header-right');
-        // Prefer inserting the toggle into header-left before the logo for better UX on mobile
-        if (headerLeft && !headerLeft.contains(menuToggle)) {
-            headerLeft.insertBefore(menuToggle, headerLeft.firstChild);
-        } else if (headerRight && !headerRight.contains(menuToggle)) {
-            headerRight.insertBefore(menuToggle, headerRight.firstChild);
-        } else if (!headerLeft && !headerRight) {
-            header.appendChild(menuToggle);
+        
+        console.log('headerRight:', headerRight ? '✅ found' : '❌ not found');
+        
+        // Insert toggle into header-right (at the beginning, before other buttons)
+        if (headerRight && !headerRight.contains(menuToggle)) {
+            headerRight.insertAdjacentElement('afterbegin', menuToggle);
+            console.log('✅ Menu toggle inserted into header-right');
+        } else {
+            console.log('⚠️ MenuToggle already in DOM or no header-right found');
         }
 
         menuToggle.addEventListener('click', () => {
             document.documentElement.classList.toggle('mobile-nav-open');
+            console.log('🔄 Toggle clicked, mobile-nav-open:', document.documentElement.classList.contains('mobile-nav-open'));
         });
 
         // Close mobile nav when clicking a nav link
         document.querySelectorAll('.header-middle a').forEach(a => {
-            a.addEventListener('click', () => document.documentElement.classList.remove('mobile-nav-open'));
+            a.addEventListener('click', () => {
+                // Small delay to allow navigation to start before closing
+                setTimeout(() => {
+                    document.documentElement.classList.remove('mobile-nav-open');
+                }, 100);
+            });
         });
+
+        // Get header-middle
+        const headerMiddle = document.querySelector('.header-middle');
+        if (!headerMiddle) {
+            console.error('❌ header-middle not found');
+            return;
+        }
+
+        // Add nav-links section (if not already present)
+        if (!headerMiddle.querySelector('.mobile-nav-links')) {
+            console.log('📝 Adding navigation links section...');
+            const navLinksSection = document.createElement('div');
+            navLinksSection.className = 'mobile-nav-links';
+            
+            // Clone the nav links from header-middle that are already there
+            // They should already be visible, so we don't need to re-add them
+            console.log('✅ Navigation links already in header-middle');
+        }
+
+        // Clone sidebar sections into the mobile menu
+        const leftSidebar = document.querySelector('.left-sidebar');
+        if (leftSidebar) {
+            console.log('📝 Cloning sidebar sections into mobile menu...');
+            
+            const sidebarSections = leftSidebar.querySelectorAll('.sidebar-section');
+            sidebarSections.forEach(section => {
+                const clonedSection = section.cloneNode(true);
+                clonedSection.classList.add('mobile-sidebar-section');
+                
+                // Expand all sections on mobile (remove display: none from nav-list)
+                const navLists = clonedSection.querySelectorAll('.nav-list');
+                navLists.forEach(list => {
+                    list.style.display = 'block';
+                });
+                
+                // Add some spacing between sections
+                clonedSection.style.marginTop = '1rem';
+                clonedSection.style.paddingTop = '1rem';
+                clonedSection.style.borderTop = '1px solid var(--border-color)';
+                
+                headerMiddle.appendChild(clonedSection);
+            });
+            console.log('✅ Sidebar sections cloned');
+        }
+
+        // Create mobile menu controls container (lang, theme toggles + download link)
+        let mobileControls = document.querySelector('.mobile-menu-controls');
+        if (!mobileControls) {
+            console.log('📝 Creating mobile-menu-controls container...');
+            mobileControls = document.createElement('div');
+            mobileControls.className = 'mobile-menu-controls';
+            mobileControls.style.marginTop = '1rem';
+            mobileControls.style.paddingTop = '1rem';
+            mobileControls.style.borderTop = '1px solid var(--border-color)';
+            
+            if (headerMiddle) {
+                headerMiddle.appendChild(mobileControls);
+                console.log('✅ mobile-menu-controls created');
+            }
+        }
+
+        // Clone lang toggle to mobile menu (prevent duplicates)
+        const langToggle = document.getElementById('lang-toggle');
+        if (langToggle && !mobileControls.querySelector('#mobile-lang-toggle')) {
+            const mobileLangToggle = langToggle.cloneNode(true);
+            mobileLangToggle.id = 'mobile-lang-toggle';
+            mobileLangToggle.addEventListener('click', () => {
+                langToggle.click();
+            });
+            mobileControls.appendChild(mobileLangToggle);
+            console.log('✅ Lang toggle cloned');
+        }
+
+        // Clone theme toggle to mobile menu (prevent duplicates)
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle && !mobileControls.querySelector('#mobile-theme-toggle')) {
+            const mobileThemeToggle = themeToggle.cloneNode(true);
+            mobileThemeToggle.id = 'mobile-theme-toggle';
+            mobileThemeToggle.addEventListener('click', () => {
+                themeToggle.click();
+            });
+            mobileControls.appendChild(mobileThemeToggle);
+            console.log('✅ Theme toggle cloned');
+        }
+
+        // Clone download button to mobile menu (prevent duplicates)
+        const downloadBtn = document.querySelector('.btn-download');
+        if (downloadBtn && !mobileControls.querySelector('.mobile-download-btn')) {
+            const mobileDownloadBtn = downloadBtn.cloneNode(true);
+            mobileDownloadBtn.className = 'mobile-download-btn btn-download';
+            // Remove aria labels to avoid conflicts
+            mobileDownloadBtn.removeAttribute('id');
+            mobileControls.appendChild(mobileDownloadBtn);
+            console.log('✅ Download button cloned');
+        }
+        
+        console.log('🍔 Mobile menu IIFE complete!');
     })();
 
     const copyButtons = document.querySelectorAll('.copy-btn');
