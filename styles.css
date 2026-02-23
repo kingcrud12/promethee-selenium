@@ -515,13 +515,7 @@ code {
 /* Footer stacking on small screens */
 @media (max-width: 520px) {
   .bottom-bar {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    padding: 0.75rem 1rem;
-    gap: 0.25rem;
-    text-align: center;
+    display: none; /* hidden on small/mobile screens per request */
   }
   .bottom-item { font-size: 0.88rem; display:block; width:100%; }
   .bottom-item a { color: inherit; }
@@ -531,6 +525,36 @@ code {
 
 @media (max-width: 420px) {
   .content-area { padding-bottom: 240px; }
+}
+
+/* Further mobile topbar / content adjustments for improved responsiveness */
+@media (max-width: 520px) {
+  .top-header {
+    height: 56px;
+    padding: 0 0.75rem;
+  }
+
+  .main-container {
+    margin-top: 56px;
+  }
+
+  .content-area {
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .page-title { font-size: 1.8rem; }
+  .breadcrumbs { font-size: 0.85rem; padding: 0.5rem 0; }
+
+  .header-right { gap: 0.4rem; }
+  .btn-download { padding: 0.45rem 0.75rem; font-size: 0.85rem; }
+
+  .logo-icon { font-size: 1.4rem; }
+  .logo-text { font-size: 1rem; }
+
+  /* Ensure header-middle links are comfortably tappable when opened */
+  .header-middle a { padding: 0.75rem 1rem; font-size: 0.95rem; }
 }
 
 .bottom-item { display: flex; align-items:center; gap:0.5rem; }
