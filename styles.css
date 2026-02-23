@@ -513,22 +513,16 @@ code {
 .menu-toggle i { font-size: 1rem; }
 
 /* Footer stacking on small screens */
-@media (max-width: 520px) {
+/* Expand mobile breakpoint to include larger iPhones (e.g. iPhone Pro Max) */
+@media (max-width: 768px) {
   .bottom-bar {
     display: none; /* hidden on small/mobile screens per request */
   }
-  .bottom-item { font-size: 0.88rem; display:block; width:100%; }
+  .bottom-item { font-size: 0.95rem; display:block; width:100%; }
   .bottom-item a { color: inherit; }
   .bottom-item strong { display:inline-block; }
-  .content-area { padding-bottom: 200px; }
-}
+  .content-area { padding-bottom: 220px; }
 
-@media (max-width: 420px) {
-  .content-area { padding-bottom: 240px; }
-}
-
-/* Further mobile topbar / content adjustments for improved responsiveness */
-@media (max-width: 520px) {
   .top-header {
     height: 56px;
     padding: 0 0.75rem;
@@ -544,17 +538,21 @@ code {
     margin-right: 0;
   }
 
-  .page-title { font-size: 1.8rem; }
-  .breadcrumbs { font-size: 0.85rem; padding: 0.5rem 0; }
+  .page-title { font-size: 1.9rem; }
+  .breadcrumbs { font-size: 0.9rem; padding: 0.5rem 0; }
 
   .header-right { gap: 0.4rem; }
-  .btn-download { padding: 0.45rem 0.75rem; font-size: 0.85rem; }
+  .btn-download { padding: 0.45rem 0.75rem; font-size: 0.9rem; }
 
-  .logo-icon { font-size: 1.4rem; }
-  .logo-text { font-size: 1rem; }
+  .logo-icon { font-size: 1.5rem; }
+  .logo-text { font-size: 1.05rem; }
 
   /* Ensure header-middle links are comfortably tappable when opened */
-  .header-middle a { padding: 0.75rem 1rem; font-size: 0.95rem; }
+  .header-middle a { padding: 0.75rem 1rem; font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .content-area { padding-bottom: 260px; }
 }
 
 .bottom-item { display: flex; align-items:center; gap:0.5rem; }
