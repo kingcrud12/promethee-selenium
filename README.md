@@ -18,6 +18,7 @@ Ce dépôt contient une série de pages HTML, un petit script de génération de
 - `generate_docs.py` - script Python pour (re)générer la documentation/statique.
 - `script.js` - scripts front-end pour le site.
 - `styles.css` - styles CSS du site.
+- `assets/fire.svg` - logo flamme (SVG) utilisé dans la topbar.
 
 ## Prérequis
 

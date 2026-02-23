@@ -217,3 +217,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Safe Service Worker registration: only attempt in secure/local contexts
+// Prevents errors when the site is opened inside VS Code webviews or file:// URLs
+(function() {
+    try {
+        if (!('serviceWorker' in navigator)) return;
+
+        const isSecureContext = window.isSecureContext || location.protocol === 'https:';
+        const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        const isVSCodeWebview = (location.protocol && location.protocol.startsWith('vscode')) || (navigator.userAgent && navigator.userAgent.includes('vscode-webview'));
+
+        if ((isSecureContext || isLocalhost) && !isVSCodeWebview) {
+            navigator.serviceWorker.register('/service-worker.js').catch(err => {
+                console.warn('Service worker registration failed (benign):', err);
+            });
+        } else {
+            // Skip registration in insecure contexts (file://, VS Code webview, etc.)
+            console.info('Service worker registration skipped: insecure or embedded context.');
+        }
+    } catch (e) {
+        console.warn('Service worker guard threw an error:', e);
+    }
+})();
