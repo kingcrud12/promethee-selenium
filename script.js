@@ -138,6 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'page.cliCommands.docsTip2': { en: 'Use the theme toggle to switch between light and dark modes', fr: 'Utilisez le bouton de thème pour basculer entre les modes clair et sombre' },
         'page.cliCommands.docsTip3': { en: 'Bookmark this page for quick reference during development', fr: 'Mettez cette page en signet pour une référence rapide pendant le développement' },
         'breadcrumb.home': { en: 'Home', fr: 'Accueil' }
+        ,
+        // Footer
+        'footer.author': { en: 'Author: <a href="https://www.linkedin.com/in/yann-dipita-dev/" target="_blank" rel="noopener noreferrer"><strong>Yann Dipita</strong></a>', fr: 'Auteur : <a href="https://www.linkedin.com/in/yann-dipita-dev/" target="_blank" rel="noopener noreferrer"><strong>Yann Dipita</strong></a>' },
+        'footer.libraries': { en: 'Libraries: <strong>pytest</strong>, <strong>selenium-ui-test-tool</strong>', fr: 'Bibliothèques : <strong>pytest</strong>, <strong>selenium-ui-test-tool</strong>' }
     };
 
     const langToggle = document.getElementById('lang-toggle');
@@ -189,6 +193,37 @@ document.addEventListener('DOMContentLoaded', () => {
             applyTheme(next);
         });
     }
+
+    // Mobile menu toggle: create a hamburger button if not present
+    (function() {
+        const header = document.querySelector('.top-header');
+        if (!header) return;
+
+        let menuToggle = document.getElementById('menu-toggle');
+        if (!menuToggle) {
+            menuToggle = document.createElement('button');
+            menuToggle.id = 'menu-toggle';
+            menuToggle.setAttribute('aria-label', 'Toggle navigation');
+            menuToggle.className = 'menu-toggle';
+            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+
+        const headerRight = header.querySelector('.header-right');
+        if (headerRight && !headerRight.contains(menuToggle)) {
+            headerRight.insertBefore(menuToggle, headerRight.firstChild);
+        } else if (!headerRight) {
+            header.appendChild(menuToggle);
+        }
+
+        menuToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('mobile-nav-open');
+        });
+
+        // Close mobile nav when clicking a nav link
+        document.querySelectorAll('.header-middle a').forEach(a => {
+            a.addEventListener('click', () => document.documentElement.classList.remove('mobile-nav-open'));
+        });
+    })();
 
     const copyButtons = document.querySelectorAll('.copy-btn');
 
