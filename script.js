@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sectionTitles.forEach(title => {
         title.addEventListener('click', () => {
-            const navList = title.nextElementSibling;
+            const section = title.closest('.sidebar-section');
+            const navList = section ? section.querySelector('.nav-list') : null;
             const icon = title.querySelector('i');
 
-            if (navList && navList.classList.contains('nav-list')) {
+            if (navList) {
                 const isClosed = window.getComputedStyle(navList).display === 'none';
 
                 if (isClosed) {
@@ -40,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'sidebar.builtInUtilities': { en: 'Built-in Utilities', fr: 'Utilitaires intégrés' },
         'sidebar.environmentMgmt': { en: 'Environment Mgmt', fr: 'Gestion des environnements' },
         'sidebar.bilingualSupport': { en: 'Bilingual Support', fr: 'Support bilingue' },
+        'sidebar.tutorialSection': { en: 'Tutorial', fr: 'Tutoriel' },
+        'sidebar.tutorial': { en: 'Tutorial', fr: 'Tutoriel' },
+        'sidebar.aboutSection': { en: 'About', fr: 'A propos' },
+        'sidebar.about': { en: 'About', fr: 'A propos' },
         'sidebar.cliCommands': { en: 'CLI Commands', fr: 'Commandes CLI' },
         'sidebar.gettingStarted': { en: 'Getting Started', fr: 'Prise en main' },
         'sidebar.init': { en: 'init', fr: 'init' },
@@ -63,9 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
         'page.gettingStarted.step2Title': { en: '2. Initialize a Project', fr: '2. Initialiser un projet' },
         'page.gettingStarted.step2Text': { en: 'Select the Init option from the menu or run:', fr: 'Sélectionnez l\'option Init depuis le menu ou exécutez :' },
         'page.gettingStarted.step2Note': { en: 'This creates a standard directory layout:', fr: 'Ceci crée une structure de répertoires standard :' },
+        'page.gettingStarted.structure.li1': { en: '<code>scenarios/</code>: For your Page Object classes.', fr: '<code>scenarios/</code> : Pour vos classes Page Object.' },
+        'page.gettingStarted.structure.li2': { en: '<code>tests/</code>: For your Pytest test scripts.', fr: '<code>tests/</code> : Pour vos scripts de tests Pytest.' },
+        'page.gettingStarted.structure.li3': { en: '<code>data/</code>: For configuration files and test data.', fr: '<code>data/</code> : Pour les fichiers de configuration et les données de test.' },
+        'page.gettingStarted.structure.li4': { en: '<code>utils/</code>: For project-specific utilities.', fr: '<code>utils/</code> : Pour les utilitaires spécifiques au projet.' },
+        'page.gettingStarted.structure.li5': { en: '<code>conftest.py</code>: Pytest configuration with pre-configured fixtures.', fr: '<code>conftest.py</code> : Configuration Pytest avec fixtures pré-configurées.' },
         'page.gettingStarted.step3Title': { en: '3. Run Your Tests', fr: '3. Exécuter vos tests' },
         'page.gettingStarted.step3Text': { en: 'Execute your tests using pytest:', fr: 'Exécutez vos tests avec pytest :' },
         'toc.onThisPage': { en: 'On this Page', fr: 'Sur cette page' },
+
+        // Tutorial page
+        'page.tutorial.title': { en: 'Tutorials', fr: 'Tutoriels' },
+        'page.tutorial.intro': { en: 'Below are a set of video tutorials to help you get started with Promethee-Selenium.', fr: 'Voici une série de vidéos tutoriels pour vous aider à démarrer avec Promethee-Selenium.' },
+        'page.tutorial.videosTitle': { en: 'Tutorial Videos', fr: 'Vidéos tutoriels' },
+        // About page
+        'page.about.title': { en: 'About', fr: 'A propos' },
+        'page.about.history': { en: '<strong>History</strong>: Promethee-Selenium started as an internal testing library to standardize UI automation patterns and later evolved into an open-source project to share best practices.', fr: '<strong>Historique</strong> : Promethee-Selenium a commencé comme une bibliothèque de tests interne pour standardiser les patterns d\'automatisation UI et a évolué ensuite en un projet open-source pour partager les bonnes pratiques.' },
+        'page.about.purpose': { en: '<strong>Purpose</strong>: Provide a structured, maintainable and extensible Page Object Model framework to simplify end-to-end testing with Selenium and Pytest.', fr: '<strong>Raison d\'être</strong> : Fournir un framework Page Object Model structuré, maintenable et extensible pour simplifier les tests end-to-end avec Selenium et Pytest.' },
+        'page.about.author': { en: 'Author: <a href="https://www.linkedin.com/in/yann-dipita-dev/" target="_blank" rel="noopener noreferrer"><strong>Yann Dipita</strong></a> — Python Developer & QA Engineer', fr: 'Auteur : <a href="https://www.linkedin.com/in/yann-dipita-dev/" target="_blank" rel="noopener noreferrer"><strong>Yann Dipita</strong></a> — Développeur Python et ingénieur QA' },
 
         // Page Object Model
         'page.pom.title': { en: 'Page Object Model (POM)', fr: 'Modèle Page Object (POM)' },
