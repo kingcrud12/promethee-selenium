@@ -534,9 +534,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Feature Showcase Animation Logic
     (function () {
-        const showcaseItems = document.querySelectorAll('.showcase-item');
-        const visualContents = document.querySelectorAll('.visual-content');
-        const controlDots = document.querySelectorAll('.control-dot');
+        const showcaseItems = document.querySelectorAll('.showcase-step');
+        const visualContents = document.querySelectorAll('.window-content');
+        const controlDots = document.querySelectorAll('.showcase-dot');
         let currentShowcaseIndex = 0;
         let showcaseInterval;
 
@@ -569,6 +569,14 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.addEventListener('click', () => {
                 updateShowcase(index);
                 startShowcaseTimer(); // Reset timer on click
+            });
+        });
+
+        // Also allow clicking on showcase-step items directly
+        showcaseItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                updateShowcase(index);
+                startShowcaseTimer();
             });
         });
 
