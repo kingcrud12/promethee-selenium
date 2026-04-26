@@ -96,6 +96,80 @@
             </div>
         </section>
 
+        <!-- Interactive Showcase -->
+        <section class="showcase-section">
+            <div class="showcase-container">
+                <div class="showcase-content">
+                    <div class="showcase-step active" data-index="0">
+                        <h4 data-i18n="landing.showcase.selenium.title">Puissance de Selenium</h4>
+                        <p data-i18n="landing.showcase.selenium.desc">Exploitez le moteur de navigation le plus fiable au
+                            monde avec une surcouche moderne et performante.</p>
+                    </div>
+                    <div class="showcase-step" data-index="1">
+                        <h4 data-i18n="landing.showcase.pom.title">Approche POM Native</h4>
+                        <p data-i18n="landing.showcase.pom.desc">Structurez vos tests avec le Page Object Model dès le
+                            premier jour pour une maintenabilité maximale.</p>
+                    </div>
+                    <div class="showcase-step" data-index="2">
+                        <h4 data-i18n="landing.showcase.cli.title">Génération via CLI</h4>
+                        <p data-i18n="landing.showcase.cli.desc">Générez automatiquement votre structure de projet et
+                            vos fichiers de tests en quelques secondes.</p>
+                    </div>
+                    <div class="showcase-nav">
+                        <div class="showcase-dot active" data-index="0"></div>
+                        <div class="showcase-dot" data-index="1"></div>
+                        <div class="showcase-dot" data-index="2"></div>
+                    </div>
+                </div>
+
+                <div class="showcase-visual">
+                    <div class="mock-window">
+                        <div class="window-header">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                        </div>
+                        <div class="window-body">
+                            <!-- Code View -->
+                            <div class="window-content active" data-index="0">
+                                <div class="code-snippet">
+                                    <span class="keyword">await</span> page.<span class="string">goto</span>(<span
+                                        class="string">'https://example.com'</span>);<br>
+                                    <span class="keyword">await</span> page.<span class="string">getByRole</span>(<span
+                                        class="string">'button'</span>, { name: <span class="string">'Login'</span>
+                                    }).<span class="string">click</span>();<br>
+                                    <span class="keyword">await</span> <span class="keyword">expect</span>(page).<span
+                                        class="string">toHaveURL</span>(<span class="string">'/dashboard'</span>);
+                                </div>
+                            </div>
+                            <!-- POM Structure -->
+                            <div class="window-content" data-index="1">
+                                <div class="tree-structure">
+                                    project-root/<br>
+                                    ├── pages/<br>
+                                    │ ├── base_page.py<br>
+                                    │ └── login_page.py<br>
+                                    ├── tests/<br>
+                                    │ └── test_auth.py<br>
+                                    └── config.yaml
+                                </div>
+                            </div>
+                            <!-- CLI View -->
+                            <div class="window-content" data-index="2">
+                                <div class="terminal-body">
+                                    $ promethee-selenium init<br>
+                                    <span style="color: #fff">? Project name:</span> my-cool-project<br>
+                                    <span style="color: #fff">? Select framework:</span> pytest<br>
+                                    <br>
+                                    <span style="color: #27c93f">✨ Project bootstrapped successfully!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Built for Testing -->
         <section class="landing-section">
             <span class="section-label" data-i18n="landing.testing.title">Built for testing</span>
