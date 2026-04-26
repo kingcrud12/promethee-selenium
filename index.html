@@ -29,7 +29,8 @@
             <a href="about.html" class="nav-link" data-i18n="header.about">About</a>
         </nav>
         <div class="header-right">
-            <a href="https://discord.gg/afNKcAjzx" target="_blank" rel="noopener noreferrer" class="social-link" title="Join Discord">
+            <a href="https://discord.gg/afNKcAjzx" target="_blank" rel="noopener noreferrer" class="social-link"
+                title="Join Discord">
                 <i class="fa-brands fa-discord"></i>
             </a>
             <button id="lang-toggle" class="lang-toggle">EN</button>
@@ -102,7 +103,8 @@
                 <div class="showcase-content">
                     <div class="showcase-step active" data-index="0">
                         <h4 data-i18n="landing.showcase.selenium.title">Puissance de Selenium</h4>
-                        <p data-i18n="landing.showcase.selenium.desc">Exploitez le moteur de navigation le plus fiable au
+                        <p data-i18n="landing.showcase.selenium.desc">Exploitez le moteur de navigation le plus fiable
+                            au
                             monde avec une surcouche moderne et performante.</p>
                     </div>
                     <div class="showcase-step" data-index="1">
@@ -133,13 +135,14 @@
                             <!-- Code View -->
                             <div class="window-content active" data-index="0">
                                 <div class="code-snippet">
-                                    <span class="keyword">await</span> page.<span class="string">goto</span>(<span
-                                        class="string">'https://example.com'</span>);<br>
-                                    <span class="keyword">await</span> page.<span class="string">getByRole</span>(<span
-                                        class="string">'button'</span>, { name: <span class="string">'Login'</span>
-                                    }).<span class="string">click</span>();<br>
-                                    <span class="keyword">await</span> <span class="keyword">expect</span>(page).<span
-                                        class="string">toHaveURL</span>(<span class="string">'/dashboard'</span>);
+                                    <span class="keyword">self.go_to</span>(<span class="string">'https://example.com'
+                                    </span>);<br>
+                                    <span class="keyword">self.click_element</span>(<span
+                                        class="string">'button'</span>,
+                                    <span class="string">'Login'</span>
+                                    );<br>
+                                    <span class="keyword">self.assert_url</span>(<span
+                                        class="string">'/dashboard'</span>);
                                 </div>
                             </div>
                             <!-- POM Structure -->
@@ -301,7 +304,8 @@
                 <h5 data-i18n="landing.footer.community">Community</h5>
                 <ul>
                     <li><a href="#">Stack Overflow</a></li>
-                    <li><a href="https://discord.gg/afNKcAjzx" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                    <li><a href="https://discord.gg/afNKcAjzx" target="_blank" rel="noopener noreferrer">Discord</a>
+                    </li>
                     <li><a href="#">Twitter</a></li>
                     <li><a href="#">LinkedIn</a></li>
                 </ul>
