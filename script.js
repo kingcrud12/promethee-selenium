@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         'landing.browsers.title': { en: 'Any browser. Any platform.', fr: 'Tout navigateur. Toute plateforme.' },
         'landing.browsers.desc': {
-            en: 'Chromium, Firefox, and WebKit on Linux, macOS, and Windows. Headless and headed. Also available for Python, .NET, and Java.',
-            fr: 'Chromium, Firefox et WebKit sur Linux, macOS et Windows. Headless ou avec interface. Disponible également pour Python, .NET et Java.'
+            en: 'Chromium, Firefox, and WebKit on Linux, macOS, and Windows. Headless and headed. Available for Python. Soon available for Java, TypeScript and C#.',
+            fr: 'Chromium, Firefox et WebKit sur Linux, macOS et Windows. Headless ou avec interface. Disponible pour Python. Bientôt disponible pour Java, TypeScript et C#'
         },
 
         'landing.companies.title': { en: 'Chosen by companies and open source projects', fr: 'Choisi par des entreprises et projets open source' },
