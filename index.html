@@ -4,168 +4,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promethee-Selenium Documentation</title>
+    <title>Promethee-Selenium - Reliable Web Automation</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/fire.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="assets/fire.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="landing-page">
 
     <header class="top-header">
         <div class="header-left">
-            <a href="#" class="logo-container">
+            <a href="index.html" class="logo-container">
                 <i class="fa-solid fa-fire logo-icon"></i>
                 <span class="logo-text">Promethee<span class="logo-highlight">Selenium</span></span>
             </a>
         </div>
         <nav class="header-middle">
-            <a href="#features" class="nav-link" data-i18n="header.features">Features</a>
-            <a href="#installation" class="nav-link" data-i18n="header.installation">Installation</a>
-            <a href="#quick-start" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
+            <a href="home.html" class="nav-link" data-i18n="header.docs">Docs</a>
+            <a href="tutorial.html" class="nav-link" data-i18n="header.tutorial">Tutorial</a>
+            <a href="about.html" class="nav-link" data-i18n="header.about">About</a>
         </nav>
         <div class="header-right">
             <button id="lang-toggle" class="lang-toggle">EN</button>
             <button id="theme-toggle" class="theme-toggle">🌙</button>
-            <a href="https://pypi.org/project/promethee-selenium/" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> <span data-i18n="header.download">Download</span></a>
+            <a href="https://github.com/marne-tech/promethee-selenium" class="btn-download" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> <span data-i18n="landing.hero.github">GitHub</span>
+            </a>
         </div>
     </header>
 
     <div class="main-container">
-        <aside class="left-sidebar">
-            <div class="sidebar-section">
-                <h3 class="section-title" data-i18n="sidebar.home">Home <i class="fa-solid fa-chevron-up"></i></h3>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-item active" data-i18n="sidebar.gettingStarted">Getting Started</a></li>
-                </ul>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title" data-i18n="landing.hero.title">
+                <span class="highlight">Promethee-Selenium</span> enables reliable web automation for testing,
+                scripting, and AI agents.
+            </h1>
+            <p class="hero-subtitle" data-i18n="landing.hero.subtitle">
+                A robust, POM-based library designed to drive Chromium, Firefox, and WebKit — in your tests, your
+                scripts, and your agent workflows.
+            </p>
+            <div class="hero-actions">
+                <a href="home.html" class="btn-hero-primary" data-i18n="landing.hero.getStarted">Get started</a>
+                <a href="https://github.com/marne-tech/promethee-selenium" target="_blank" class="btn-hero-secondary">
+                    <i class="fa-brands fa-github"></i> <span data-i18n="landing.hero.star">Star</span> <span
+                        class="star-count">200+</span>
+                </a>
             </div>
+        </section>
 
-            <div class="sidebar-section">
-                <h3 class="section-title" data-i18n="sidebar.coreLibrary">Core Library <i class="fa-solid fa-chevron-up"></i></h3>
-                <ul class="nav-list">
-                    <li><a href="page-object-model.html" class="nav-item" data-i18n="sidebar.pageObjectModel">Page Object Model</a></li>
-                    <li><a href="scaffolding.html" class="nav-item" data-i18n="sidebar.scaffolding">Scaffolding</a></li>
-                    <li><a href="built-in-utilities.html" class="nav-item" data-i18n="sidebar.builtInUtilities">Built-in Utilities</a></li>
-                    <li><a href="environment-mgmt.html" class="nav-item" data-i18n="sidebar.environmentMgmt">Environment Mgmt</a></li>
-                    <li><a href="bilingual-support.html" class="nav-item" data-i18n="sidebar.bilingualSupport">Bilingual Support</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3 class="section-title" data-i18n="sidebar.tutorialSection">Tutorial</h3>
-                <ul class="nav-list">
-                    <li><a href="tutorial.html" class="nav-item" data-i18n="sidebar.tutorial">Tutorial</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3 class="section-title" data-i18n="sidebar.aboutSection">A propos</h3>
-                <ul class="nav-list">
-                    <li><a href="about.html" class="nav-item" data-i18n="sidebar.about">A propos</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3 class="section-title" data-i18n="sidebar.cliCommands">CLI Commands <i class="fa-solid fa-chevron-down"></i></h3>
-                <ul class="nav-list" style="display: none;">
-                    <li><a href="cli-commands.html#init-command" class="nav-item" data-i18n="sidebar.init">init</a></li>
-                    <li><a href="cli-commands.html#docs-command" class="nav-item" data-i18n="sidebar.docs">docs</a></li>
-                </ul>
-            </div>
-        </aside>
-
-        <main class="content-area">
-            <div class="breadcrumbs">
-                <span class="breadcrumb-item">Promethee-Selenium</span>
-                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="breadcrumb-item" data-i18n="sidebar.home">Home</span>
-                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="breadcrumb-item current-page" data-i18n="page.gettingStarted.title">Getting Started</span>
-            </div>
-
-            <article class="document-content">
-                <h1 class="page-title" data-i18n="page.gettingStarted.title">Getting Started</h1>
-                <p class="intro-text" data-i18n="page.gettingStarted.intro">
-                    <strong>Promethee-Selenium</strong> is a robust, Page Object Model (POM) based library for automated
-                    UI testing using Selenium and Pytest.
-                    It is designed to streamline your end-to-end testing workflow by providing a structured
-                    architecture, ensuring your tests are maintainable, scalable, and easy to read.
-                </p>
-
-                <h2 id="features" data-i18n="page.gettingStarted.featuresTitle">Features</h2>
-                <ul>
-                    <li data-i18n="page.gettingStarted.features.li1"><strong>Page Object Model (POM)</strong>: Enforces a clean separation between page interactions (locators, actions) and test logic (assertions, workflows).</li>
-                    <li data-i18n="page.gettingStarted.features.li2"><strong>Interactive CLI</strong>: A user-friendly command-line interface to guide you through project initialization and documentation.</li>
-                    <li data-i18n="page.gettingStarted.features.li3"><strong>Scaffolding</strong>: Quickly generate a production-ready project structure with <code>promethee-selenium init</code>.</li>
-                    <li data-i18n="page.gettingStarted.features.li4"><strong>Built-in Utilities</strong>: A rich set of helper functions for common Selenium actions (clicking, typing, waiting).</li>
-                    <li data-i18n="page.gettingStarted.features.li5"><strong>Environment Management</strong>: Native support for managing test environments and credentials securely.</li>
-                    <li data-i18n="page.gettingStarted.features.li6"><strong>Bilingual Support</strong>: The CLI and documentation are available in both English and French.</li>
-                </ul>
-
-                <h2 id="installation" data-i18n="page.gettingStarted.installationTitle">Installation</h2>
-                <p data-i18n="page.gettingStarted.installationText">Install the package easily via pip:</p>
-                <div class="code-block">
-                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                    <code class="language-bash">pip install promethee-selenium</code>
+        <!-- Top Feature Grid cards style -->
+        <section class="landing-section" style="border-top: none; padding-top: 2rem;">
+            <div class="top-feature-grid">
+                <div class="top-feature-card">
+                    <h3 data-i18n="landing.features.test.title">Promethee Test</h3>
+                    <p data-i18n="landing.features.test.desc">Full-featured test runner with POM architecture,
+                        auto-waiting, assertions, and parallelism across browsers.</p>
+                    <div class="terminal-snippet">
+                        <code>pip install promethee-selenium</code>
+                    </div>
+                    <a href="home.html" class="doc-link" data-i18n="landing.features.test.docLink">Testing
+                        documentation</a>
                 </div>
-
-                <h2 id="quick-start" data-i18n="page.gettingStarted.quickStartTitle">Quick Start</h2>
-                <h3 id="step-1" data-i18n="page.gettingStarted.step1Title">1. Launch the CLI</h3>
-                <p data-i18n="page.gettingStarted.step1Text">After installation, run the following command to access the interactive menu:</p>
-                <div class="code-block">
-                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                    <code class="language-bash">promethee-selenium</code>
+                <div class="top-feature-card">
+                    <h3 data-i18n="landing.features.cli.title">Promethee CLI</h3>
+                    <p data-i18n="landing.features.cli.desc">Interactive command-line interface for project
+                        initialization, scaffolding, and documentation management.</p>
+                    <div class="terminal-snippet">
+                        <code>promethee-selenium init</code>
+                    </div>
+                    <a href="cli-commands.html" class="doc-link" data-i18n="landing.features.cli.docLink">CLI
+                        documentation</a>
                 </div>
-                <p data-i18n="page.gettingStarted.step1Note">You will be prompted to select your language (English/French) and then choose an action.</p>
-
-                <h3 id="step-2" data-i18n="page.gettingStarted.step2Title">2. Initialize a Project</h3>
-                <p data-i18n="page.gettingStarted.step2Text">Select the <strong>Init</strong> option from the menu or run:</p>
-                <div class="code-block">
-                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                    <code class="language-bash">promethee-selenium init</code>
+                <div class="top-feature-card">
+                    <h3 data-i18n="landing.features.ai.title">Promethee AI</h3>
+                    <p data-i18n="landing.features.ai.desc">Framework-agnostic design that provides structured context
+                        to AI agents for robust web interactions.</p>
+                    <div class="terminal-snippet">
+                        <code>npx promethee-mcp@latest</code>
+                    </div>
+                    <a href="#" class="doc-link" data-i18n="landing.features.ai.docLink">AI documentation</a>
                 </div>
-                <p data-i18n="page.gettingStarted.step2Note">This creates a standard directory layout:</p>
-                <ul>
-                    <li data-i18n="page.gettingStarted.structure.li1"><code>scenarios/</code>: For your Page Object classes.</li>
-                    <li data-i18n="page.gettingStarted.structure.li2"><code>tests/</code>: For your Pytest test scripts.</li>
-                    <li data-i18n="page.gettingStarted.structure.li3"><code>data/</code>: For configuration files and test data.</li>
-                    <li data-i18n="page.gettingStarted.structure.li4"><code>utils/</code>: For project-specific utilities.</li>
-                    <li data-i18n="page.gettingStarted.structure.li5"><code>conftest.py</code>: Pytest configuration with pre-configured fixtures.</li>
-                </ul>
-
-                <h3 id="step-3" data-i18n="page.gettingStarted.step3Title">3. Run Your Tests</h3>
-                <p data-i18n="page.gettingStarted.step3Text">Execute your tests using pytest:</p>
-                <div class="code-block">
-                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                    <code class="language-bash">pytest tests/</code>
-                </div>
-
-            </article>
-        </main>
-
-        <aside class="right-sidebar">
-            <div class="toc-container">
-                <h4 class="toc-title" data-i18n="toc.onThisPage">On this Page</h4>
-                <div class="toc-line"></div>
-                <ul class="toc-list">
-                    <li><a href="#features" class="toc-link" data-i18n="page.gettingStarted.featuresTitle">Features</a></li>
-                    <li><a href="#installation" class="toc-link" data-i18n="page.gettingStarted.installationTitle">Installation</a></li>
-                    <li>
-                        <a href="#quick-start" class="toc-link" data-i18n="page.gettingStarted.quickStartTitle">Quick Start</a>
-                        <ul class="toc-sublist">
-                            <li><a href="#step-1" class="toc-link sub-link" data-i18n="page.gettingStarted.step1Title">1. Launch CLI</a></li>
-                            <li><a href="#step-2" class="toc-link sub-link" data-i18n="page.gettingStarted.step2Title">2. Initialize Project</a></li>
-                            <li><a href="#step-3" class="toc-link sub-link" data-i18n="page.gettingStarted.step3Title">3. Run Tests</a></li>
-                        </ul>
-                    </li>
-                </ul>
             </div>
-        </aside>
+        </section>
+
+        <!-- Built for Testing -->
+        <section class="landing-section">
+            <span class="section-label" data-i18n="landing.testing.title">Built for testing</span>
+            <div class="feature-grid-2">
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.autowait.title">Auto-wait and web-first assertions</h4>
+                    <p data-i18n="landing.testing.autowait.desc">Promothee waits for elements to be actionable before
+                        performing actions. Assertions automatically retry until conditions are met. No artificial
+                        timeouts, no flaky tests.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.locators.title">Resilient locators</h4>
+                    <p data-i18n="landing.testing.locators.desc">Find elements with selectors that mirror how users see
+                        the page: getByRole, getByLabel, getByPlaceholder, getByTestId. No brittle CSS paths.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.isolation.title">Test isolation</h4>
+                    <p data-i18n="landing.testing.isolation.desc">Each test gets a fresh browser context — l'équivalent
+                        d'un profil vierge. Full isolation with near-zero overhead. Save authentication state once and
+                        reuse it across tests.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.parallel.title">Parallelism and sharding</h4>
+                    <p data-i18n="landing.testing.parallel.desc">Tests run in parallel by default across all configured
+                        browsers. Shard across multiple machines for faster CI. Full cross-browser coverage on every
+                        commit.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built for AI Agents -->
+        <section class="landing-section">
+            <span class="section-label" data-i18n="landing.ai.title">Built for AI agents</span>
+            <div class="feature-grid-2">
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.accessibility.title">Accessibility snapshots, not screenshots</h4>
+                    <p data-i18n="landing.ai.accessibility.desc">Agents interact with pages through structured
+                        accessibility trees — element roles, names, and refs. Deterministic and unambiguous, no vision
+                        models required.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.mcp.title">MCP server</h4>
+                    <p data-i18n="landing.ai.mcp.desc">Drop-in Model Context Protocol server for VS Code, Cursor, Claude
+                        Desktop, Windsurf, and any MCP client. Full browser control through standard tool calls.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.cli.title">CLI for coding agents</h4>
+                    <p data-i18n="landing.ai.cli.desc">Token-efficient command-line interface with installable skills.
+                        Purpose-built for Claude Code, GitHub Copilot, and similar coding agents that need to balance
+                        browser automation with large codebases.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.monitoring.title">Session monitoring</h4>
+                    <p data-i18n="landing.ai.monitoring.desc">Visual dashboard with live screencast previews of all
+                        running browser sessions. Click any session to zoom in and take control.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Powerful Tooling -->
+        <section class="landing-section">
+            <span class="section-label" data-i18n="landing.tooling.title">Powerful tooling</span>
+            <div class="feature-grid-2">
+                <div class="feature-block">
+                    <h4 data-i18n="landing.tooling.generator.title">Test generator</h4>
+                    <p data-i18n="landing.tooling.generator.desc">Record your actions in the browser and Promothee
+                        writes the test code. Generate assertions from the recording toolbar. Pick locators by clicking
+                        on elements.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.tooling.trace.title">Trace Viewer</h4>
+                    <p data-i18n="landing.tooling.trace.desc">Full timeline of test execution with DOM snapshots,
+                        network requests, console logs, and screenshots at every step. Investigate failures without
+                        re-running.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.tooling.vscode.title">VS Code extension</h4>
+                    <p data-i18n="landing.tooling.vscode.desc">Run, debug, and generate tests directly in the editor.
+                        Set breakpoints, live-inspect locators in the browser, and view full execution traces in the
+                        sidebar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Browsers -->
+        <section class="landing-section browser-section">
+            <div class="browser-icons">
+                <i class="fa-brands fa-chrome"></i>
+                <i class="fa-brands fa-firefox"></i>
+                <i class="fa-brands fa-safari"></i>
+                <i class="fa-brands fa-edge"></i>
+            </div>
+            <h2 class="hero-title" data-i18n="landing.browsers.title"
+                style="font-size: 2.5rem; margin-bottom: 3.5rem; border: none; padding-top: 0;">Any browser. Any
+                platform.</h2>
+            <p class="hero-subtitle" data-i18n="landing.browsers.desc" style="margin: 0 auto;">Chromium, Firefox, and
+                WebKit on Linux, macOS, and Windows. Headless and headed. Also available for Python, .NET, and Java.</p>
+        </section>
+
+        <!-- Companies -->
+        <section class="company-showcase">
+            <h3 data-i18n="landing.companies.title">Chosen by companies and open source projects</h3>
+            <div class="company-grid">
+                <span class="company-name">VS Code</span>
+                <span class="company-name">Bing</span>
+                <span class="company-name">Outlook</span>
+                <span class="company-name">Disney+ Hotstar</span>
+                <span class="company-name">Material UI</span>
+                <span class="company-name">ING</span>
+                <span class="company-name">Adobe</span>
+                <span class="company-name">React Navigation</span>
+                <span class="company-name">Accessibility Insights</span>
+            </div>
+        </section>
     </div>
+
+    <footer class="landing-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h5 data-i18n="landing.footer.learn">Learn</h5>
+                <ul>
+                    <li><a href="home.html" data-i18n="header.docs">Getting started</a></li>
+                    <li><a href="tutorial.html" data-i18n="sidebar.tutorial">Tutorials</a></li>
+                    <li><a href="bilingual-support.html" data-i18n="sidebar.bilingual">Bilingual Support</a></li>
+                    <li><a href="#" data-i18n="landing.contributors.title">Contributors</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5 data-i18n="landing.footer.community">Community</h5>
+                <ul>
+                    <li><a href="#">Stack Overflow</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5 data-i18n="landing.footer.more">More</h5>
+                <ul>
+                    <li><a href="https://github.com/kingcrud12/promethee-selenium">GitHub</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#" data-i18n="landing.footer.blog">Blog</a></li>
+                    <li><a href="#" data-i18n="landing.footer.ambassadors">Ambassadors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="landing.footer.privacy">Privacy Statement</p>
+            <p data-i18n="landing.footer.copyright">Copyright © 2026 Promethee</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
