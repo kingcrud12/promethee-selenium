@@ -131,7 +131,7 @@ a:hover {
   display: flex;
   align-items: center;
   transition: color 0.2s;
-  margin-right: 0;
+  margin-right: 0.25rem;
 }
 
 .social-link:hover {
@@ -160,7 +160,7 @@ a:hover {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.25rem;
 }
 
 /* Language toggle */
