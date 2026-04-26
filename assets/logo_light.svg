@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 100" width="450" height="100">
+  <defs>
+    <linearGradient id="fire-grad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff176"/>
+      <stop offset="50%" stop-color="#ff6b4a"/>
+      <stop offset="100%" stop-color="#d32f2f"/>
+    </linearGradient>
+    <style>
+      .logo-text { font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 42px; }
+      .p-word { fill: #0b1117; }
+      .s-word { fill: #d32f2f; }
+    </style>
+  </defs>
+  
+  <!-- Icon Group -->
+  <g transform="translate(20, 15) scale(1.2)">
+    <path d="M32 2c-4 9-14 13-14 26 0 11 10 18 14 26 4-8 14-15 14-26 0-13-10-17-14-26z" fill="url(#fire-grad)"/>
+    <path d="M32 18c-2 5-6 7-6 12 0 6 5 9 6 12 1-3 6-6 6-12 0-5-4-7-6-12z" fill="#fff5e6" opacity="0.25"/>
+  </g>
+  
+  <!-- Text Group -->
+  <text x="100" y="65" class="logo-text">
+    <tspan class="p-word">Promethee</tspan><tspan class="s-word" dx="5">Selenium</tspan>
+  </text>
+</svg>
