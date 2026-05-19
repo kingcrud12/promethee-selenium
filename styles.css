@@ -1,34 +1,77 @@
 :root {
-  --bg-color: #0d1117;
-  --bg-secondary: #161b22;
-  --text-main: #c9d1d9;
-  --text-muted: #8b949e;
-  --accent-color: #ff6b4a;
-  /* Fire orange */
-  --accent-hover: #ff856a;
-  --border-color: #30363d;
+  --bg-color: #17181C;
+  --bg-secondary: #23262F;
+  --text-main: #FFFFFF;
+  --text-muted: #C1C3C8;
+  --accent-color: #B3E0FF; /* Soft Ice Blue */
+  --accent-hover: #80C8FF;
+  --border-color: #353841;
   --sidebar-width: 260px;
   --right-sidebar-width: 240px;
   --header-height: 64px;
-  --code-bg: #0d1117;
-  --code-border: #30363d;
-  --header-bg: rgba(13, 17, 23, 0.8);
+  --code-bg: #17181C;
+  --code-border: #353841;
+  --header-bg: rgba(35, 38, 47, 0.85);
   --code-text: #e2e8f0;
+  --btn-primary-text: #17181C;
+
+  /* Feature Accent Badges (Dark Mode) */
+  --badge-yellow-bg: #4E4022;
+  --badge-yellow-border: #EEBD53;
+  --badge-yellow-text: #F8D88C;
+
+  --badge-purple-bg: #40224E;
+  --badge-purple-border: #BD53EE;
+  --badge-purple-text: #DC9BF9;
+
+  --badge-green-bg: #304E22;
+  --badge-green-border: #84EE53;
+  --badge-green-text: #BEF6A2;
+
+  --badge-pink-bg: #4E2232;
+  --badge-pink-border: #EE5389;
+  --badge-pink-text: #F9A4C0;
+
+  --badge-blue-bg: #172E4F;
+  --badge-blue-border: #3388FF;
+  --badge-blue-text: #99C2FF;
 }
 
 /* Light theme overrides */
 .light-theme {
-  --bg-color: #f6f8fa;
-  --bg-secondary: #f1f5f9;
-  --text-main: #0b1117;
-  --text-muted: #546070;
-  --accent-color: #d9534f;
-  --accent-hover: #e46b66;
-  --border-color: #e1e4e8;
-  --code-bg: #f5f7fa;
-  --code-border: #dfe6ee;
-  --header-bg: rgba(255, 255, 255, 0.95);
-  --code-text: #0b1117;
+  --bg-color: #FFFFFF;
+  --bg-secondary: #F6F7F9;
+  --text-main: #17181C;
+  --text-muted: #353841;
+  --accent-color: #3D8AF5; /* Vibrant Gin Blue */
+  --accent-hover: #2675DE;
+  --border-color: #EDEEF3;
+  --code-bg: #F6F7F9;
+  --code-border: #EDEEF3;
+  --header-bg: rgba(246, 247, 249, 0.95);
+  --code-text: #17181C;
+  --btn-primary-text: #FFFFFF;
+
+  /* Feature Accent Badges (Light Mode) */
+  --badge-yellow-bg: #FCEAC5;
+  --badge-yellow-border: #F5BB3D;
+  --badge-yellow-text: #B07B0A;
+
+  --badge-purple-bg: #EDD1FA;
+  --badge-purple-border: #BB3DF5;
+  --badge-purple-text: #8014B8;
+
+  --badge-green-bg: #DEFBCE;
+  --badge-green-border: #4FDF0C;
+  --badge-green-text: #2D8007;
+
+  --badge-pink-bg: #FAD1DF;
+  --badge-pink-border: #F53D7D;
+  --badge-pink-text: #B01E50;
+
+  --badge-blue-bg: #CFE2FC;
+  --badge-blue-border: #3D8AF5;
+  --badge-blue-text: #1B5CB3;
 }
 
 * {
@@ -96,7 +139,7 @@ a:hover {
 .logo-icon {
   color: var(--accent-color);
   font-size: 1.5rem;
-  text-shadow: 0 0 10px rgba(255, 107, 74, 0.5);
+  text-shadow: 0 0 12px rgba(61, 138, 245, 0.4);
 }
 
 .logo-highlight {
@@ -142,8 +185,8 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, var(--accent-color), #d9381e);
-  color: #fff;
+  background: linear-gradient(135deg, var(--accent-color), #1b5cb3);
+  color: var(--btn-primary-text);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -153,8 +196,8 @@ a:hover {
 
 .btn-download:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
-  color: #fff;
+  box-shadow: 0 4px 12px rgba(61, 138, 245, 0.3);
+  color: var(--btn-primary-text);
 }
 
 .header-right {
@@ -281,7 +324,7 @@ a:hover {
 }
 
 .nav-item.active {
-  background-color: rgba(255, 107, 74, 0.1);
+  background-color: rgba(61, 138, 245, 0.1);
   color: var(--accent-color);
   font-weight: 500;
 }
@@ -1040,9 +1083,76 @@ code {
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.hero-mascot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mascot-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Mobile responsive hero mascot */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-text {
+    align-items: center;
+  }
+  
+  .hero-title {
+    text-align: center;
+  }
+  
+  .hero-subtitle {
+    text-align: center;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .mascot-img {
+    max-width: 280px;
+  }
 }
 
 .hero-title {
@@ -1055,9 +1165,6 @@ code {
 
 .hero-title .highlight {
   color: var(--accent-color);
-  background: linear-gradient(135deg, var(--accent-color), #d9381e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -1079,8 +1186,8 @@ code {
   font-size: 1.1rem;
   font-weight: 700;
   background: var(--accent-color);
-  color: #fff;
-  border-radius: 8px;
+  color: var(--btn-primary-text);
+  border-radius: 9999px;
   transition: all 0.2s;
   display: flex;
   align-items: center;
@@ -1090,8 +1197,8 @@ code {
 .btn-hero-primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(255, 107, 74, 0.4);
-  color: #fff;
+  box-shadow: 0 4px 20px rgba(61, 138, 245, 0.4);
+  color: var(--btn-primary-text);
 }
 
 .btn-hero-secondary {
@@ -1100,7 +1207,7 @@ code {
   font-weight: 700;
   border: 1px solid var(--border-color);
   color: var(--text-main);
-  border-radius: 8px;
+  border-radius: 9999px;
   transition: all 0.2s;
   display: flex;
   align-items: center;
@@ -1684,5 +1791,178 @@ code {
   /* Hide social link in header on mobile */
   .social-link:not(.mobile-social-link) {
     display: none !important;
+  }
+}
+
+/* Gin-Inspired Landing Page Specific Styles */
+
+/* Header brand logo tweaks */
+.logo-container {
+  font-family: system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Primary buttons text hover correction */
+.btn-hero-primary {
+  color: var(--btn-primary-text) !important;
+}
+
+/* Feature Badge Accent System */
+.feature-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Badge Color Classes mapping the system */
+.badge-yellow {
+  background-color: var(--badge-yellow-bg);
+  border: 1px solid var(--badge-yellow-border);
+  color: var(--badge-yellow-text);
+}
+
+.badge-purple {
+  background-color: var(--badge-purple-bg);
+  border: 1px solid var(--badge-purple-border);
+  color: var(--badge-purple-text);
+}
+
+.badge-green {
+  background-color: var(--badge-green-bg);
+  border: 1px solid var(--badge-green-border);
+  color: var(--badge-green-text);
+}
+
+.badge-pink {
+  background-color: var(--badge-pink-bg);
+  border: 1px solid var(--badge-pink-border);
+  color: var(--badge-pink-text);
+}
+
+.badge-blue {
+  background-color: var(--badge-blue-bg);
+  border: 1px solid var(--badge-blue-border);
+  color: var(--badge-blue-text);
+}
+
+/* 2-Column What is Promethee-Selenium Section */
+.what-is-section {
+  background-color: var(--bg-color);
+  padding: 8rem 2rem 4rem;
+}
+
+.what-is-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.what-is-text h2 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  position: relative;
+  padding-bottom: 0.5rem;
+  border: none;
+}
+
+.what-is-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 999px;
+}
+
+.what-is-text p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+/* technical mock window customizations */
+.what-is-code .mock-window {
+  border-radius: 0px; /* Sharp corners like Gin cards */
+  background: #17181c;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.what-is-code .window-header {
+  background: #23262f;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.what-is-code .window-body {
+  padding: 2rem;
+  min-height: 200px;
+  font-family: 'Fira Code', 'Roboto Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Starlight/Gin Card Layout Overrides */
+.top-feature-card {
+  border-radius: 0px !important; /* Sharp corners */
+  border: 1px solid var(--border-color);
+  padding: 2.5rem 3rem !important; /* airy 40px padding */
+  background-color: var(--bg-color) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  gap: 0.5rem !important;
+  transform: none !important;
+}
+
+.top-feature-card:hover {
+  border-color: var(--accent-color) !important;
+  transform: translateY(-4px) !important;
+}
+
+.top-feature-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.top-feature-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.top-feature-card .terminal-snippet {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Responsive adjustments for what-is section */
+@media (max-width: 900px) {
+  .what-is-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .what-is-text {
+    text-align: left;
   }
 }
