@@ -168,70 +168,101 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Landing Page
         'landing.hero.title': {
-            en: '<span class="highlight">Promethee-Selenium</span>. The fastest, zero-flakiness web automation library. Crystal clear.',
-            fr: '<span class="highlight">Promethee-Selenium</span>. La bibliothèque d\'automatisation web la plus rapide et sans instabilité. Limpide.'
+            en: '<span class="highlight">Promethee-Selenium</span> enables reliable web automation for testing, scripting, and AI agents.',
+            fr: '<span class="highlight">Promethee-Selenium</span> permet une automatisation web fiable pour les tests, les scripts et les agents IA.'
         },
         'landing.hero.subtitle': {
             en: 'A robust, POM-based library designed to drive Chromium, Firefox, and WebKit — in your tests, your scripts, and your agent workflows.',
             fr: 'Une bibliothèque robuste basée sur POM conçue pour piloter Chromium, Firefox et Webkit — dans vos tests, vos scripts et vos workflows d\'agents.'
         },
-        'landing.hero.getStarted': { en: 'Read the docs', fr: 'Consulter la documentation' },
+        'landing.hero.getStarted': { en: 'Get started', fr: 'Commencer' },
+        'landing.hero.star': { en: 'Star', fr: 'Star' },
         'landing.hero.github': { en: 'GitHub', fr: 'GitHub' },
-        
-        // What is Section
-        'landing.whatis.title': { en: 'What is Promethee-Selenium?', fr: 'Qu\'est-ce que Promethee-Selenium ?' },
-        'landing.whatis.desc': {
-            en: 'Promethee-Selenium is an industrial-grade web automation framework built in Python. It features a Page Object Model (POM) native architecture and provides stability up to 40 times more reliable than standard Selenium scripts. If you need speed, developer productivity, and native AI Agent integrations, you will love Promethee.',
-            fr: 'Promethee-Selenium est un framework d\'automatisation web de niveau industriel conçu en Python. Il dispose d\'une architecture native Page Object Model (POM) et offre une stabilité jusqu\'à 40 fois plus fiable que les scripts Selenium standards. Si vous avez besoin de vitesse, de productivité et d\'intégrations d\'agents IA, vous allez adorer Promethee.'
+        'landing.features.test.title': { en: 'Promethee Test', fr: 'Promethee Test' },
+        'landing.features.test.desc': {
+            en: 'Professional-grade automation library designed to eliminate Selenium flakiness while bringing a structured, industrial approach to UI testing.',
+            fr: 'Bibliothèque d\'automatisation professionnelle conçue pour éradiquer l\'instabilité de Selenium tout en apportant une structure industrielle.'
         },
-
-        // Core Advantages Section
-        'landing.features.label': { en: 'Core Advantages', fr: 'Principaux Avantages' },
-        'landing.features.fast.title': { en: 'Fast', fr: 'Rapide' },
-        'landing.features.fast.desc': {
-            en: 'Smart waiting and parallel execution. Near-zero reflection overhead. Predictable automation performance across all browsers.',
-            fr: 'Attentes intelligentes et exécution parallèle. Zéro réflexion de surcharge. Performance prévisible sur tous les navigateurs.'
+        'landing.features.test.docLink': { en: 'Testing documentation', fr: 'Documentation des tests' },
+        'landing.features.cli.title': { en: 'Rapid Automation CLI', fr: 'CLI d\'automatisation rapide' },
+        'landing.features.cli.desc': {
+            en: 'Don\'t waste time with boilerplate. Bootstrap a complete, production-ready POM architecture in seconds using our interactive CLI.',
+            fr: 'Ne perdez plus de temps sur la configuration. Générez une architecture POM complète et prête pour la production en quelques secondes.'
         },
-        'landing.features.pom.title': { en: 'Page Object Model', fr: 'Page Object Model' },
-        'landing.features.pom.desc': {
-            en: 'Native Page Object Model support. Standardize your testing architecture cleanly right from the start.',
-            fr: 'Prise en charge native du Page Object Model. Standardisez proprement l\'architecture de vos tests dès le premier jour.'
-        },
-        'landing.features.crashfree.title': { en: 'Crash-free', fr: 'Sans crash' },
-        'landing.features.crashfree.desc': {
-            en: 'Catch panics, handle alerts, recover browser contexts automatically. Your testing runs are robust and always complete.',
-            fr: 'Capture les panics, gère les alertes et restaure les contextes de navigation automatiquement. Vos exécutions sont robustes.'
-        },
-        'landing.features.bilingual.title': { en: 'Bilingual by Design', fr: 'Bilingue par conception' },
-        'landing.features.bilingual.desc': {
-            en: 'Full CLI interactions, detailed exceptions, and interactive documentation natively available in English and French.',
-            fr: 'Interactions CLI complètes, exceptions détaillées et documentation interactive disponibles nativement en anglais et en français.'
-        },
+        'landing.features.cli.docLink': { en: 'CLI documentation', fr: 'Documentation CLI' },
         'landing.features.ai.title': { en: 'Built for AI agents', fr: 'Conçu pour les agents IA' },
         'landing.features.ai.desc': {
-            en: 'Model Context Protocol (MCP) server support, structured accessibility tree context, and token-efficient CLI for agent interactions.',
-            fr: 'Support du serveur Model Context Protocol (MCP), contexte d\'arbre d\'accessibilité structuré et CLI optimisée pour les agents.'
+            en: 'Framework-agnostic design providing structured accessibility context to AI agents for deterministic and robust web interactions.',
+            fr: 'Conception agnostique au framework fournissant un contexte d\'accessibilité structuré aux agents IA pour des interactions déterministes.'
         },
-        'landing.features.trace.title': { en: 'Visual Trace Viewer', fr: 'Trace Viewer visuel' },
-        'landing.features.trace.desc': {
-            en: 'Explore interactive DOM snapshots, network requests, console logs, and step-by-step executions after every test run.',
-            fr: 'Explorez des instantanés DOM interactifs, requêtes réseau, logs console et exécutions étape par étape après chaque test.'
+        'landing.features.ai.docLink': { en: 'AI documentation', fr: 'Documentation IA' },
+
+        // Detailed Sections
+        'landing.testing.title': { en: 'Zero-Flakiness approach', fr: 'Approche Zéro-Instabilité' },
+        'landing.testing.autowait.title': { en: 'Smart waiting mechanisms', fr: 'Mécanismes d\'attente intelligents' },
+        'landing.testing.autowait.desc': {
+            en: 'Promethee-Selenium implements smart waiting and robust interactions using the selenium-ui-test-tool. Your tests only fail when they should.',
+            fr: 'Promethee-Selenium implémente des attentes intelligentes et des interactions robustes. Vos tests n\'échouent que lorsqu\'ils le doivent.'
         },
-        'landing.features.cli.title': { en: 'Interactive CLI', fr: 'CLI interactif' },
-        'landing.features.cli.desc': {
-            en: 'Bootstrap a production-ready POM project structure (with configuration, sample pages, and tests) in seconds.',
-            fr: 'Générez une structure de projet complète et prête pour la production (avec configurations, pages exemples et tests) en secondes.'
+        'landing.testing.isolation.title': { en: 'Professional POM Structure', fr: 'Structure POM Professionnelle' },
+        'landing.testing.isolation.desc': {
+            en: 'Enforced clean separation of concerns. Page locators and actions are decoupled from test logic, making maintenance effortless and scalable.',
+            fr: 'Séparation claire des responsabilités. Les sélecteurs et actions sont découplés de la logique de test, simplifiant la maintenance.'
         },
-        'landing.features.vscode.title': { en: 'VS Code Extension', fr: 'Extension VS Code' },
-        'landing.features.vscode.desc': {
-            en: 'Run, debug, and record your browser tests directly from your IDE with modern debugger integration.',
-            fr: 'Lancez, débuggez et enregistrez vos tests de navigateur directement depuis votre IDE grâce à une intégration moderne.'
+        'landing.testing.locators.title': { en: 'Rapid Scaffolding', fr: 'Scaffolding Rapide' },
+        'landing.testing.locators.desc': {
+            en: 'Run promethee-selenium init to generate a best-practice project structure instantly. From conftest.py to page objects, it\'s all there.',
+            fr: 'Lancez promethee-selenium init pour créer instantanément une structure de projet respectant les meilleures pratiques.'
+        },
+        'landing.testing.parallel.title': { en: 'Bilingual by Design', fr: 'Bilingue par Conception' },
+        'landing.testing.parallel.desc': {
+            en: 'Both the CLI and the documentation are available natively in English and French, supporting global and local teams.',
+            fr: 'Le CLI et la documentation sont disponibles nativement en anglais et en français, pour toutes les équipes.'
+        },
+
+        'landing.ai.title': { en: 'Built for AI agents', fr: 'Conçu pour les agents IA' },
+        'landing.ai.accessibility.title': { en: 'Accessibility snapshots, not screenshots', fr: 'Snapshots d\'accessibilité, pas de captures d\'écran' },
+        'landing.ai.accessibility.desc': {
+            en: 'Agents interact with pages through structured accessibility trees — element roles, names, and refs. Deterministic and unambiguous, no vision models required.',
+            fr: 'Les agents interagissent via des arbres d\'accessibilité structurés : rôles, noms et références d\'éléments. Déterministe et sans ambiguïté, aucun modèle de vision requis.'
+        },
+        'landing.ai.mcp.title': { en: 'MCP server', fr: 'Serveur MCP' },
+        'landing.ai.mcp.desc': {
+            en: 'Drop-in Model Context Protocol server for VS Code, Cursor, Claude Desktop, Windsurf, and any MCP client. Full browser control through standard tool calls.',
+            fr: 'Serveur Model Context Protocol prêt à l\'emploi pour VS Code, Cursor, Claude Desktop, Windsurf et tout client MCP. Contrôle total du navigateur via appels d\'outils standard.'
+        },
+        'landing.ai.cli.title': { en: 'CLI for coding agents', fr: 'CLI pour les agents de codage' },
+        'landing.ai.cli.desc': {
+            en: 'Token-efficient command-line interface with installable skills. Purpose-built for Claude Code, GitHub Copilot, and similar coding agents that need to balance browser automation with large codebases.',
+            fr: 'Interface CLI optimisée en tokens avec compétences installables. Dédié à Claude Code, GitHub Copilot et agents similaires gérant automatisation et larges codebases.'
+        },
+        'landing.ai.monitoring.title': { en: 'Session monitoring', fr: 'Monitoring de session' },
+        'landing.ai.monitoring.desc': {
+            en: 'Visual dashboard with live screencast previews of all running browser sessions. Click any session to zoom in and take control.',
+            fr: 'Tableau de bord visuel avec aperçus live de toutes les sessions de navigation en cours. Cliquez sur une session pour zoomer et prendre le contrôle.'
+        },
+
+        'landing.tooling.title': { en: 'Powerful tooling', fr: 'Outils puissants' },
+        'landing.tooling.generator.title': { en: 'Test generator', fr: 'Générateur de tests' },
+        'landing.tooling.generator.desc': {
+            en: 'Record your actions in the browser and Promethee writes the test code. Generate assertions from the recording toolbar. Pick locators by clicking on elements.',
+            fr: 'Enregistrez vos actions et Promethee génère le code du test. Créez des assertions depuis la barre d\'outils. Choisissez vos locators en cliquant sur les éléments.'
+        },
+        'landing.tooling.trace.title': { en: 'Trace Viewer', fr: 'Trace Viewer' },
+        'landing.tooling.trace.desc': {
+            en: 'Full timeline of test execution with DOM snapshots, network requests, console logs, and screenshots at every step. Investigate failures without re-running.',
+            fr: 'Chronologie complète de l\'exécution : snapshots DOM, requêtes réseau, logs console et captures à chaque étape. Enquêtez sans relancer les tests.'
+        },
+        'landing.tooling.vscode.title': { en: 'VS Code extension', fr: 'Extension VS Code' },
+        'landing.tooling.vscode.desc': {
+            en: 'Run, debug, and generate tests directly in the editor. Set breakpoints, live-inspect locators in the browser, and view full execution traces in the sidebar.',
+            fr: 'Lancez, débuggez et générez vos tests directement dans l\'éditeur. Définissez des points d\'arrêt et inspectez les locators en direct dans la barre latérale.'
         },
 
         'landing.browsers.title': { en: 'Any browser. Any platform.', fr: 'Tout navigateur. Toute plateforme.' },
         'landing.browsers.desc': {
             en: 'Chromium, Firefox, and WebKit on Linux, macOS, and Windows. Headless and headed. Available for Python. Soon available for Java, TypeScript and C#.',
-            fr: 'Chromium, Firefox et WebKit sur Linux, macOS et Windows. Headless ou avec interface. Disponible pour Python. Bientôt disponible pour Java, TypeScript et C#.'
+            fr: 'Chromium, Firefox et WebKit sur Linux, macOS et Windows. Headless ou avec interface. Disponible pour Python. Bientôt disponible pour Java, TypeScript et C#'
         },
 
         'landing.companies.title': { en: 'Chosen by companies and open source projects', fr: 'Choisi par des entreprises et projets open source' },

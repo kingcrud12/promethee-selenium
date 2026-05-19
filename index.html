@@ -45,37 +45,86 @@
     <div class="main-container">
         <!-- Hero Section -->
         <section class="hero-section">
-            <div class="hero-container">
-                <div class="hero-text">
-                    <h1 class="hero-title" data-i18n="landing.hero.title">
-                        <span class="highlight">Promethee-Selenium</span>. The fastest, zero-flakiness web automation library. Crystal clear.
-                    </h1>
-                    <p class="hero-subtitle" data-i18n="landing.hero.subtitle">
-                        A robust, POM-based library designed to drive Chromium, Firefox, and WebKit — in your tests, your scripts, and your agent workflows.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="home.html" class="btn-hero-primary" data-i18n="landing.hero.getStarted">Read the docs</a>
-                        <a href="https://github.com/marne-tech/promethee-selenium" target="_blank" class="btn-hero-secondary">
-                            <i class="fa-brands fa-github"></i> <span data-i18n="landing.hero.github">GitHub</span>
-                        </a>
+            <h1 class="hero-title" data-i18n="landing.hero.title">
+                <span class="highlight">Promethee-Selenium</span> enables reliable web automation for testing,
+                scripting, and AI agents.
+            </h1>
+            <p class="hero-subtitle" data-i18n="landing.hero.subtitle">
+                A robust, POM-based library designed to drive Chromium, Firefox, and WebKit — in your tests, your
+                scripts, and your agent workflows.
+            </p>
+            <div class="hero-actions">
+                <a href="home.html" class="btn-hero-primary" data-i18n="landing.hero.getStarted">Get started</a>
+                <a href="https://github.com/marne-tech/promethee-selenium" target="_blank" class="btn-hero-secondary">
+                    <i class="fa-brands fa-github"></i> <span data-i18n="landing.hero.star">Star</span> <span
+                        class="star-count">200+</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Top Feature Grid cards style -->
+        <section class="landing-section" style="border-top: none; padding-top: 2rem;">
+            <div class="top-feature-grid">
+                <div class="top-feature-card">
+                    <h3 data-i18n="landing.features.test.title">Promethee Test</h3>
+                    <p data-i18n="landing.features.test.desc">Full-featured test runner with POM architecture,
+                        auto-waiting, assertions, and parallelism across browsers.</p>
+                    <div class="terminal-snippet">
+                        <code>pip install promethee-selenium</code>
                     </div>
+                    <a href="home.html" class="doc-link" data-i18n="landing.features.test.docLink">Testing
+                        documentation</a>
                 </div>
-                <div class="hero-mascot">
-                    <img src="assets/mascot.png" alt="Promethee Mascot" class="mascot-img">
+                <div class="top-feature-card">
+                    <h3 data-i18n="landing.features.cli.title">Promethee CLI</h3>
+                    <p data-i18n="landing.features.cli.desc">Interactive command-line interface for project
+                        initialization, scaffolding, and documentation management.</p>
+                    <div class="terminal-snippet">
+                        <code>promethee-selenium init</code>
+                    </div>
+                    <a href="cli-commands.html" class="doc-link" data-i18n="landing.features.cli.docLink">CLI
+                        documentation</a>
+                </div>
+                <div class="top-feature-card">
+                    <h3 data-i18n="landing.features.ai.title">Promethee AI</h3>
+                    <p data-i18n="landing.features.ai.desc">Framework-agnostic design that provides structured context
+                        to AI agents for robust web interactions.</p>
+                    <div class="terminal-snippet">
+                        <code>npx promethee-mcp@latest</code>
+                    </div>
+                    <a href="#" class="doc-link" data-i18n="landing.features.ai.docLink">AI documentation</a>
                 </div>
             </div>
         </section>
 
-        <!-- What is Section -->
-        <section class="landing-section what-is-section" style="border-top: none; padding-top: 0;">
-            <div class="what-is-container">
-                <div class="what-is-text">
-                    <h2 data-i18n="landing.whatis.title">What is Promethee-Selenium?</h2>
-                    <p data-i18n="landing.whatis.desc">
-                        Promethee-Selenium is an industrial-grade web automation framework built in Python. It features a Page Object Model (POM) native architecture and provides stability up to 40 times more reliable than standard Selenium scripts. If you need speed, developer productivity, and native AI Agent integrations, you will love Promethee.
-                    </p>
+        <!-- Interactive Showcase -->
+        <section class="showcase-section">
+            <div class="showcase-container">
+                <div class="showcase-content">
+                    <div class="showcase-step active" data-index="0">
+                        <h4 data-i18n="landing.showcase.selenium.title">Puissance de Selenium</h4>
+                        <p data-i18n="landing.showcase.selenium.desc">Exploitez le moteur de navigation le plus fiable
+                            au
+                            monde avec une surcouche moderne et performante.</p>
+                    </div>
+                    <div class="showcase-step" data-index="1">
+                        <h4 data-i18n="landing.showcase.pom.title">Approche POM Native</h4>
+                        <p data-i18n="landing.showcase.pom.desc">Structurez vos tests avec le Page Object Model dès le
+                            premier jour pour une maintenabilité maximale.</p>
+                    </div>
+                    <div class="showcase-step" data-index="2">
+                        <h4 data-i18n="landing.showcase.cli.title">Génération via CLI</h4>
+                        <p data-i18n="landing.showcase.cli.desc">Générez automatiquement votre structure de projet et
+                            vos fichiers de tests en quelques secondes.</p>
+                    </div>
+                    <div class="showcase-nav">
+                        <div class="showcase-dot active" data-index="0"></div>
+                        <div class="showcase-dot" data-index="1"></div>
+                        <div class="showcase-dot" data-index="2"></div>
+                    </div>
                 </div>
-                <div class="what-is-code">
+
+                <div class="showcase-visual">
                     <div class="mock-window">
                         <div class="window-header">
                             <div class="dot red"></div>
@@ -83,13 +132,40 @@
                             <div class="dot green"></div>
                         </div>
                         <div class="window-body">
-                            <div class="code-snippet">
-                                <span class="keyword" style="color: #569cd6;">from</span> promethee_selenium <span class="keyword" style="color: #569cd6;">import</span> PrometheeTest<br><br>
-                                <span class="keyword" style="color: #569cd6;">class</span> <span style="color: #4ec9b0;">TestExample</span>(PrometheeTest):<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" style="color: #569cd6;">def</span> <span style="color: #dcdcaa;">test_login</span>(<span style="color: #9cdcfe;">self</span>):<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">self</span>.go_to(<span class="string" style="color: #ce9178;">'https://example.com'</span>)<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">self</span>.click_element(<span class="string" style="color: #ce9178;">'button'</span>, <span class="string" style="color: #ce9178;">'Login'</span>)<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #9cdcfe;">self</span>.assert_url(<span class="string" style="color: #ce9178;">'/dashboard'</span>)
+                            <!-- Code View -->
+                            <div class="window-content active" data-index="0">
+                                <div class="code-snippet">
+                                    <span class="keyword">self.go_to</span>(<span class="string">'https://example.com'
+                                    </span>);<br>
+                                    <span class="keyword">self.click_element</span>(<span
+                                        class="string">'button'</span>,
+                                    <span class="string">'Login'</span>
+                                    );<br>
+                                    <span class="keyword">self.assert_url</span>(<span
+                                        class="string">'/dashboard'</span>);
+                                </div>
+                            </div>
+                            <!-- POM Structure -->
+                            <div class="window-content" data-index="1">
+                                <div class="tree-structure">
+                                    project-root/<br>
+                                    ├── pages/<br>
+                                    │ ├── base_page.py<br>
+                                    │ └── login_page.py<br>
+                                    ├── tests/<br>
+                                    │ └── test_auth.py<br>
+                                    └── config.yaml
+                                </div>
+                            </div>
+                            <!-- CLI View -->
+                            <div class="window-content" data-index="2">
+                                <div class="terminal-body">
+                                    $ promethee-selenium init<br>
+                                    <span style="color: #fff">? Project name:</span> my-cool-project<br>
+                                    <span style="color: #fff">? Select framework:</span> pytest<br>
+                                    <br>
+                                    <span style="color: #27c93f">✨ Project bootstrapped successfully!</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,73 +173,86 @@
             </div>
         </section>
 
-        <!-- Features Grid Section -->
-        <section class="landing-section" style="padding-top: 4rem;">
-            <span class="section-label" data-i18n="landing.features.label">Core Advantages</span>
-            <div class="features-grid" style="margin-top: 0;">
-                <!-- Fast -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-yellow">
-                        <i class="fa-solid fa-gauge-high"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.fast.title">Fast</h3>
-                    <p data-i18n="landing.features.fast.desc">Smart waiting and parallel execution. Near-zero reflection overhead. Predictable automation performance across all browsers.</p>
+        <!-- Built for Testing -->
+        <section class="landing-section">
+            <span class="section-label" data-i18n="landing.testing.title">Built for testing</span>
+            <div class="feature-grid-2">
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.autowait.title">Auto-wait and web-first assertions</h4>
+                    <p data-i18n="landing.testing.autowait.desc">Promothee waits for elements to be actionable before
+                        performing actions. Assertions automatically retry until conditions are met. No artificial
+                        timeouts, no flaky tests.</p>
                 </div>
-                <!-- Page Object Model -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-blue">
-                        <i class="fa-solid fa-sitemap"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.pom.title">Page Object Model</h3>
-                    <p data-i18n="landing.features.pom.desc">Native Page Object Model support. Standardize your testing architecture cleanly right from the start.</p>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.locators.title">Resilient locators</h4>
+                    <p data-i18n="landing.testing.locators.desc">Find elements with selectors that mirror how users see
+                        the page: getByRole, getByLabel, getByPlaceholder, getByTestId. No brittle CSS paths.</p>
                 </div>
-                <!-- Crash-Free -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-green">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.crashfree.title">Crash-free</h3>
-                    <p data-i18n="landing.features.crashfree.desc">Catch panics, handle alerts, recover browser contexts automatically. Your testing runs are robust and always complete.</p>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.isolation.title">Test isolation</h4>
+                    <p data-i18n="landing.testing.isolation.desc">Each test gets a fresh browser context — l'équivalent
+                        d'un profil vierge. Full isolation with near-zero overhead. Save authentication state once and
+                        reuse it across tests.</p>
                 </div>
-                <!-- Bilingual by Design -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-yellow">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.bilingual.title">Bilingual by Design</h3>
-                    <p data-i18n="landing.features.bilingual.desc">Full CLI interactions, detailed exceptions, and interactive documentation natively available in English and French.</p>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.testing.parallel.title">Parallelism and sharding</h4>
+                    <p data-i18n="landing.testing.parallel.desc">Tests run in parallel by default across all configured
+                        browsers. Shard across multiple machines for faster CI. Full cross-browser coverage on every
+                        commit.</p>
                 </div>
-                <!-- Built for AI Agents -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-purple">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.ai.title">Built for AI agents</h3>
-                    <p data-i18n="landing.features.ai.desc">Model Context Protocol (MCP) server support, structured accessibility tree context, and token-efficient CLI for agent interactions.</p>
+            </div>
+        </section>
+
+        <!-- Built for AI Agents -->
+        <section class="landing-section">
+            <span class="section-label" data-i18n="landing.ai.title">Built for AI agents</span>
+            <div class="feature-grid-2">
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.accessibility.title">Accessibility snapshots, not screenshots</h4>
+                    <p data-i18n="landing.ai.accessibility.desc">Agents interact with pages through structured
+                        accessibility trees — element roles, names, and refs. Deterministic and unambiguous, no vision
+                        models required.</p>
                 </div>
-                <!-- Trace Viewer -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-pink">
-                        <i class="fa-solid fa-timeline"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.trace.title">Visual Trace Viewer</h3>
-                    <p data-i18n="landing.features.trace.desc">Explore interactive DOM snapshots, network requests, console logs, and step-by-step executions after every test run.</p>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.mcp.title">MCP server</h4>
+                    <p data-i18n="landing.ai.mcp.desc">Drop-in Model Context Protocol server for VS Code, Cursor, Claude
+                        Desktop, Windsurf, and any MCP client. Full browser control through standard tool calls.</p>
                 </div>
-                <!-- CLI -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-pink">
-                        <i class="fa-solid fa-terminal"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.cli.title">Interactive CLI</h3>
-                    <p data-i18n="landing.features.cli.desc">Bootstrap a production-ready POM project structure (with configuration, sample pages, and tests) in seconds.</p>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.cli.title">CLI for coding agents</h4>
+                    <p data-i18n="landing.ai.cli.desc">Token-efficient command-line interface with installable skills.
+                        Purpose-built for Claude Code, GitHub Copilot, and similar coding agents that need to balance
+                        browser automation with large codebases.</p>
                 </div>
-                <!-- VS Code Extension -->
-                <div class="top-feature-card">
-                    <div class="feature-badge badge-blue">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 data-i18n="landing.features.vscode.title">VS Code Extension</h3>
-                    <p data-i18n="landing.features.vscode.desc">Run, debug, and record your browser tests directly from your IDE with modern debugger integration.</p>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.ai.monitoring.title">Session monitoring</h4>
+                    <p data-i18n="landing.ai.monitoring.desc">Visual dashboard with live screencast previews of all
+                        running browser sessions. Click any session to zoom in and take control.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Powerful Tooling -->
+        <section class="landing-section">
+            <span class="section-label" data-i18n="landing.tooling.title">Powerful tooling</span>
+            <div class="feature-grid-2">
+                <div class="feature-block">
+                    <h4 data-i18n="landing.tooling.generator.title">Test generator</h4>
+                    <p data-i18n="landing.tooling.generator.desc">Record your actions in the browser and Promothee
+                        writes the test code. Generate assertions from the recording toolbar. Pick locators by clicking
+                        on elements.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.tooling.trace.title">Trace Viewer</h4>
+                    <p data-i18n="landing.tooling.trace.desc">Full timeline of test execution with DOM snapshots,
+                        network requests, console logs, and screenshots at every step. Investigate failures without
+                        re-running.</p>
+                </div>
+                <div class="feature-block">
+                    <h4 data-i18n="landing.tooling.vscode.title">VS Code extension</h4>
+                    <p data-i18n="landing.tooling.vscode.desc">Run, debug, and generate tests directly in the editor.
+                        Set breakpoints, live-inspect locators in the browser, and view full execution traces in the
+                        sidebar.</p>
                 </div>
             </div>
         </section>
@@ -177,8 +266,10 @@
                 <i class="fa-brands fa-edge"></i>
             </div>
             <h2 class="hero-title" data-i18n="landing.browsers.title"
-                style="font-size: 2.5rem; margin-bottom: 3.5rem; border: none; padding-top: 0;">Any browser. Any platform.</h2>
-            <p class="hero-subtitle" data-i18n="landing.browsers.desc" style="margin: 0 auto;">Chromium, Firefox, and WebKit on Linux, macOS, and Windows. Headless and headed. Also available for Python, .NET, and Java.</p>
+                style="font-size: 2.5rem; margin-bottom: 3.5rem; border: none; padding-top: 0;">Any browser. Any
+                platform.</h2>
+            <p class="hero-subtitle" data-i18n="landing.browsers.desc" style="margin: 0 auto;">Chromium, Firefox, and
+                WebKit on Linux, macOS, and Windows. Headless and headed. Also available for Python, .NET, and Java.</p>
         </section>
 
         <!-- Companies -->
