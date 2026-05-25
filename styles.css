@@ -3,9 +3,9 @@
   --bg-secondary: #161b22;
   --text-main: #c9d1d9;
   --text-muted: #8b949e;
-  --accent-color: #ff6b4a;
-  /* Fire orange */
-  --accent-hover: #ff856a;
+  --accent-color: #e23616;
+  /* Primary Red */
+  --accent-hover: #ff4d29;
   --border-color: #30363d;
   --sidebar-width: 260px;
   --right-sidebar-width: 240px;
@@ -22,8 +22,8 @@
   --bg-secondary: #f1f5f9;
   --text-main: #0b1117;
   --text-muted: #546070;
-  --accent-color: #d9534f;
-  --accent-hover: #e46b66;
+  --accent-color: #d12e12;
+  --accent-hover: #e23616;
   --border-color: #e1e4e8;
   --code-bg: #f5f7fa;
   --code-border: #dfe6ee;
@@ -96,7 +96,7 @@ a:hover {
 .logo-icon {
   color: var(--accent-color);
   font-size: 1.5rem;
-  text-shadow: 0 0 10px rgba(255, 107, 74, 0.5);
+  text-shadow: 0 0 10px rgba(0, 173, 216, 0.5);
 }
 
 .logo-highlight {
@@ -142,7 +142,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, var(--accent-color), #d9381e);
+  background: linear-gradient(135deg, var(--accent-color), #007d9c);
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -153,7 +153,7 @@ a:hover {
 
 .btn-download:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 107, 74, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 173, 216, 0.3);
   color: #fff;
 }
 
@@ -281,7 +281,7 @@ a:hover {
 }
 
 .nav-item.active {
-  background-color: rgba(255, 107, 74, 0.1);
+  background-color: rgba(0, 173, 216, 0.1);
   color: var(--accent-color);
   font-weight: 500;
 }
@@ -1035,83 +1035,163 @@ code {
 }
 
 /* Landing Page Styles */
-.hero-section {
-  padding: 8rem 2rem 6rem;
+.Hero {
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.Hero.lightbg {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding-top: calc(var(--header-height) + 4rem);
+  margin-top: calc(var(--header-height) * -1);
+}
+
+.Hero-gridContainer {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: center;
 }
 
-.hero-title {
-  font-size: clamp(2rem, 7vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--text-main);
-  letter-spacing: -0.04em;
+.Hero-blurb h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
-.hero-title .highlight {
-  color: var(--accent-color);
-  background: linear-gradient(135deg, var(--accent-color), #d9381e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.Hero-blurbList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
 }
 
-.hero-subtitle {
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  color: var(--text-muted);
-  max-width: 800px;
+.Hero-blurbList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+.Hero-blurbList svg {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
 }
 
-.btn-hero-primary {
-  padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+.Hero-actions {
+  display: block;
+}
+
+.Hero-actions .Primary {
   background: var(--accent-color);
-  color: #fff;
-  border-radius: 8px;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.btn-hero-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(255, 107, 74, 0.4);
-  color: #fff;
-}
-
-.btn-hero-secondary {
-  padding: 0.8rem 1.5rem;
-  font-size: 1.1rem;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
   font-weight: 700;
-  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-width: 200px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.Hero-actions .Primary:hover {
+  background: var(--accent-hover);
+}
+
+.Hero-actions .Secondary {
+  background: transparent;
   color: var(--text-main);
-  border-radius: 8px;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-width: 200px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.Hero-actions .Secondary:hover {
   background: var(--bg-secondary);
 }
 
-.btn-hero-secondary:hover {
-  border-color: var(--text-muted);
-  background: var(--border-color);
+.Hero-gopher {
+  display: flex;
+  justify-content: flex-end;
 }
+
+.Hero-gopher img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Companies Section */
+.WhoUses {
+  padding: 5rem 2rem;
+  background-color: var(--bg-secondary);
+}
+
+.WhoUses-gridContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.WhoUses-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.WhoUses-headerH2 {
+  font-size: 2.25rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.WhoUses-subheader {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.WhoUsesCaseStudyList-gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.WhoUsesCaseStudyList-caseStudy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.WhoUsesCaseStudyList-logo {
+  max-width: 250px;
+  height: 120px;
+  object-fit: contain;
+  transition: all 0.2s;
+}
+
 
 .features-grid {
   display: grid;
@@ -1553,20 +1633,28 @@ code {
     box-sizing: border-box;
   }
 
-  .hero-section {
-    padding: 6rem 1rem;
+  .Hero {
+    padding: 2rem 1rem;
+  }
+
+  .Hero-gridContainer {
+    grid-template-columns: 1fr;
     text-align: center;
     gap: 2rem;
   }
 
-  .hero-actions {
+  .Hero-blurbList li {
+    text-align: left;
+  }
+
+  .Hero-buttons {
     flex-direction: column;
     width: 100%;
-    margin: 3rem auto 0;
+    margin: 2rem auto 0;
     gap: 1rem;
   }
 
-  .hero-actions a {
+  .Hero-buttons a {
     width: 100%;
     justify-content: center;
     font-size: 1.1rem;

@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilingual Support - Promethee-Selenium</title>
+    <title>About - Promethee-Selenium</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/fire.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="assets/fire.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         (function() {
@@ -33,15 +32,14 @@
             </a>
         </div>
         <nav class="header-middle">
-            <a href="index.html#features" class="nav-link" data-i18n="header.features">Features</a>
-            <a href="index.html#installation" class="nav-link" data-i18n="header.installation">Installation</a>
-            <a href="index.html#quick-start" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
-            <a href="why-promethee.html" class="nav-link" data-i18n="header.why">Pourquoi Promethee</a>
+            <a href="index.html" class="nav-link" data-i18n="header.features">Features</a>
+            <a href="#" class="nav-link" data-i18n="header.installation">Installation</a>
+            <a href="#" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
         </nav>
         <div class="header-right">
             <button id="lang-toggle" class="lang-toggle">EN</button>
-              <button id="theme-toggle" class="theme-toggle">🌙</button>
-              <a href="https://pypi.org/project/promethee-selenium/" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> Download</a>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+            <a href="https://pypi.org/project/promethee-selenium/" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> <span data-i18n="header.download">Download</span></a>
         </div>
     </header>
 
@@ -61,7 +59,7 @@
                     <li><a href="scaffolding.html" class="nav-item" data-i18n="sidebar.scaffolding">Scaffolding</a></li>
                     <li><a href="built-in-utilities.html" class="nav-item" data-i18n="sidebar.builtInUtilities">Built-in Utilities</a></li>
                     <li><a href="environment-mgmt.html" class="nav-item" data-i18n="sidebar.environmentMgmt">Environment Mgmt</a></li>
-                    <li><a href="bilingual-support.html" class="nav-item active" data-i18n="sidebar.bilingualSupport">Bilingual Support</a></li>
+                    <li><a href="bilingual-support.html" class="nav-item" data-i18n="sidebar.bilingualSupport">Bilingual Support</a></li>
                 </ul>
             </div>
 
@@ -76,6 +74,7 @@
                 <h3 class="section-title" data-i18n="sidebar.aboutSection">A propos</h3>
                 <ul class="nav-list">
                     <li><a href="about.html" class="nav-item" data-i18n="sidebar.about">A propos</a></li>
+                    <li><a href="why-promethee.html" class="nav-item active" data-i18n="header.why">Pourquoi Promethee</a></li>
                 </ul>
             </div>
 
@@ -92,41 +91,38 @@
             <div class="breadcrumbs">
                 <span class="breadcrumb-item">Promethee-Selenium</span>
                 <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="breadcrumb-item" data-i18n="sidebar.coreLibrary">Core Library</span>
+                <span class="breadcrumb-item" data-i18n="sidebar.home">Home</span>
                 <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-                <span class="breadcrumb-item current-page" data-i18n="page.bilingual.title">Bilingual Support</span>
+                <span class="breadcrumb-item current-page" data-i18n="header.why">Why Promethee</span>
             </div>
 
             <article class="document-content">
-                <h1 class="page-title" data-i18n="page.bilingual.title">Bilingual Support</h1>
-                <p class="intro-text" data-i18n="page.bilingual.intro">
-                    Promethee-Selenium breaks down language barriers. Enjoy complete framework interactions, documentation, and error handling natively in both <strong>English</strong> and <strong>French</strong>.
-                </p>
+                <h1 class="page-title" data-i18n="page.why.title">Why Promethee-Selenium?</h1>
 
-                <h2 id="cli">In the CLI</h2>
-                <p>When you start the interactive CLI using <code>promethee-selenium</code>, the very first prompt will ask you to select your preferred language interaction. Every menu options, confirmation messages, and hints automatically translates to match your preference.</p>
-                
-                <h3 id="example-cli">CLI Demonstration</h3>
-                <div class="code-block">
-                    <button class="copy-btn"><i class="fa-regular fa-copy"></i></button>
-                    <code class="language-bash">? Select Language / Choisissez la langue: 
-  English
-❯ Français</code>
-                </div>
+                <h2 data-i18n="page.why.zeroFlake">Zero-Flakiness approach</h2>
+                <p data-i18n="page.why.zeroFlakeText">Promethee-Selenium implements smart waiting and robust interactions using the selenium-ui-test-tool. Your tests only fail when they should.</p>
 
-                <h2 id="documentation">In the Documentation</h2>
-                <p>Along with English, full French guides are continuously updated, ensuring that teams from diverse linguistic backgrounds achieve absolute clarity over the implementation structure.</p>
+                <h2 data-i18n="page.why.pom">Professional POM Structure</h2>
+                <p data-i18n="page.why.pomText">Enforced clean separation of concerns. Page locators and actions are decoupled from test logic, making maintenance effortless and scalable.</p>
+
+                <h2 data-i18n="page.why.scaffold">Rapid Scaffolding</h2>
+                <p data-i18n="page.why.scaffoldText">Run <code>promethee-selenium init</code> to generate a best-practice project structure instantly. From conftest.py to page objects, it's all there.</p>
+
+                <h2 data-i18n="page.why.bilingual">Bilingual by Design</h2>
+                <p data-i18n="page.why.bilingualText">Both the CLI and the documentation are available natively in English and French, supporting global and local teams.</p>
+
             </article>
         </main>
 
         <aside class="right-sidebar">
             <div class="toc-container">
-                <h4 class="toc-title">On this Page</h4>
+                <h4 class="toc-title" data-i18n="toc.onThisPage">On this Page</h4>
                 <div class="toc-line"></div>
                 <ul class="toc-list">
-                    <li><a href="#cli" class="toc-link">In the CLI</a></li>
-                    <li><a href="#example-cli" class="toc-link">CLI Demonstration</a></li>
-                    <li><a href="#documentation" class="toc-link">In the Documentation</a></li>
+                    <li><a href="#" class="toc-link" data-i18n="page.why.zeroFlake">Zero-Flakiness approach</a></li>
+                    <li><a href="#" class="toc-link" data-i18n="page.why.pom">Professional POM Structure</a></li>
+                    <li><a href="#" class="toc-link" data-i18n="page.why.scaffold">Rapid Scaffolding</a></li>
+                    <li><a href="#" class="toc-link" data-i18n="page.why.bilingual">Bilingual by Design</a></li>
                 </ul>
             </div>
         </aside>

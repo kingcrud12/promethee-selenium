@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'header.docs': { en: 'Docs', fr: 'Documentation' },
         'header.tutorial': { en: 'Tutorial', fr: 'Tutoriel' },
         'header.about': { en: 'About', fr: 'A propos' },
+        'header.why': { en: 'Why Promethee', fr: 'Pourquoi Promethee' },
 
         'sidebar.home': { en: 'Home', fr: 'Accueil' },
         'sidebar.coreLibrary': { en: 'Core Library', fr: 'Bibliothèque principale' },
@@ -89,6 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
         'page.about.history': { en: '<strong>History</strong>: Promethee-Selenium started as an internal testing library to standardize UI automation patterns and later evolved into an open-source project to share best practices.', fr: '<strong>Historique</strong> : Promethee-Selenium a commencé comme une bibliothèque de tests interne pour standardiser les patterns d\'automatisation UI et a évolué ensuite en un projet open-source pour partager les bonnes pratiques.' },
         'page.about.purpose': { en: '<strong>Purpose</strong>: Provide a structured, maintainable and extensible Page Object Model framework to simplify end-to-end testing with Selenium and Pytest.', fr: '<strong>Raison d\'être</strong> : Fournir un framework Page Object Model structuré, maintenable et extensible pour simplifier les tests end-to-end avec Selenium et Pytest.' },
         'page.about.author': { en: 'Author: <a href="https://www.linkedin.com/in/yann-dipita-dev/" target="_blank" rel="noopener noreferrer"><strong>Yann Dipita</strong></a> — Python Developer & QA Engineer', fr: 'Auteur : <a href="https://www.linkedin.com/in/yann-dipita-dev/" target="_blank" rel="noopener noreferrer"><strong>Yann Dipita</strong></a> — Développeur Python et ingénieur QA' },
+        
+        // Why Promethee page
+        'page.why.title': { en: 'Why Promethee-Selenium?', fr: 'Pourquoi Promethee-Selenium ?' },
+        'page.why.zeroFlake': { en: 'Zero-Flakiness approach', fr: 'Approche Zéro-Instabilité' },
+        'page.why.zeroFlakeText': { en: 'Promethee-Selenium implements smart waiting and robust interactions using the selenium-ui-test-tool. Your tests only fail when they should.', fr: 'Promethee-Selenium implémente des attentes intelligentes et des interactions robustes. Vos tests n\'échouent que lorsqu\'ils le doivent.' },
+        'page.why.pom': { en: 'Professional POM Structure', fr: 'Structure POM Professionnelle' },
+        'page.why.pomText': { en: 'Enforced clean separation of concerns. Page locators and actions are decoupled from test logic, making maintenance effortless and scalable.', fr: 'Séparation claire des responsabilités. Les sélecteurs et actions sont découplés de la logique de test, simplifiant la maintenance.' },
+        'page.why.scaffold': { en: 'Rapid Scaffolding', fr: 'Scaffolding Rapide' },
+        'page.why.scaffoldText': { en: 'Run <code>promethee-selenium init</code> to generate a best-practice project structure instantly. From conftest.py to page objects, it\'s all there.', fr: 'Lancez <code>promethee-selenium init</code> pour créer instantanément une structure de projet respectant les meilleures pratiques.' },
+        'page.why.bilingual': { en: 'Bilingual by Design', fr: 'Bilingue par Conception' },
+        'page.why.bilingualText': { en: 'Both the CLI and the documentation are available natively in English and French, supporting global and local teams.', fr: 'Le CLI et la documentation sont disponibles nativement en anglais et en français, pour toutes les équipes.' },
 
         // Page Object Model
         'page.pom.title': { en: 'Page Object Model (POM)', fr: 'Modèle Page Object (POM)' },
@@ -168,12 +180,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Landing Page
         'landing.hero.title': {
-            en: '<span class="highlight">Promethee-Selenium</span> enables reliable web automation for testing, scripting, and AI agents.',
-            fr: '<span class="highlight">Promethee-Selenium</span> permet une automatisation web fiable pour les tests, les scripts et les agents IA.'
+            en: 'Browser testing for modern teams',
+            fr: 'Automation de tests UI pour les équipes modernes'
         },
         'landing.hero.subtitle': {
-            en: 'A robust, POM-based library designed to drive Chromium, Firefox, and WebKit — in your tests, your scripts, and your agent workflows.',
-            fr: 'Une bibliothèque robuste basée sur POM conçue pour piloter Chromium, Firefox et Webkit — dans vos tests, vos scripts et vos workflows d\'agents.'
+            en: 'Create tests, debug failures, and improve quality faster than ever. Get AI-powered guidance at every stage of testing, with full code ownership, on a platform that connects your team.',
+            fr: 'Créez des tests, déboguez les échecs et améliorez la qualité plus rapidement que jamais. Obtenez des conseils basés sur l\'IA à chaque étape des tests, avec une pleine propriété du code, sur une plateforme qui connecte votre équipe.'
+        },
+        'landing.hero.feature1': { en: 'A robust, POM-based library designed for testing.', fr: 'Une bibliothèque robuste basée sur POM conçue pour les tests.' },
+        'landing.hero.feature2': { en: 'Drive Chromium, Firefox, and WebKit reliably.', fr: 'Pilotez Chromium, Firefox et WebKit de manière fiable.' },
+        'landing.hero.feature3': { en: 'Perfect for your scripts and agent workflows.', fr: 'Idéal pour vos scripts et workflows d\'agents.' },
+        'landing.hero.footnote1': { 
+            en: 'Download packages for <a href="#" style="color: var(--accent-color); text-decoration: underline;">Windows 64-bit</a>, <a href="#" style="color: var(--accent-color); text-decoration: underline;">macOS</a>, <a href="#" style="color: var(--accent-color); text-decoration: underline;">Linux</a>, and <a href="#" style="color: var(--accent-color); text-decoration: underline;">more</a>',
+            fr: 'Téléchargez les packages pour <a href="#" style="color: var(--accent-color); text-decoration: underline;">Windows 64-bit</a>, <a href="#" style="color: var(--accent-color); text-decoration: underline;">macOS</a>, <a href="#" style="color: var(--accent-color); text-decoration: underline;">Linux</a>, et <a href="#" style="color: var(--accent-color); text-decoration: underline;">plus</a>'
+        },
+        'landing.hero.footnote2': {
+            en: 'The <code>promethee</code> command by default downloads and authenticates modules using the Promethee module mirror run by Marne Tech. <a href="#" style="color: var(--accent-color); text-decoration: underline;">Learn more.</a>',
+            fr: 'La commande <code>promethee</code> télécharge et authentifie par défaut les modules via le miroir Promethee géré par Marne Tech. <a href="#" style="color: var(--accent-color); text-decoration: underline;">En savoir plus.</a>'
         },
         'landing.hero.getStarted': { en: 'Get started', fr: 'Commencer' },
         'landing.hero.star': { en: 'Star', fr: 'Star' },
@@ -265,7 +288,11 @@ document.addEventListener('DOMContentLoaded', () => {
             fr: 'Chromium, Firefox et WebKit sur Linux, macOS et Windows. Headless ou avec interface. Disponible pour Python. Bientôt disponible pour Java, TypeScript et C#'
         },
 
-        'landing.companies.title': { en: 'Chosen by companies and open source projects', fr: 'Choisi par des entreprises et projets open source' },
+        'landing.companies.title': { en: 'Companies using Promethee', fr: 'Ils utilisent Promethee' },
+        'landing.companies.subtitle': { 
+            en: 'Organizations in every industry use Promethee to power their tests and automations',
+            fr: 'Des organisations de tous secteurs utilisent Promethee pour propulser leurs tests et automatisations'
+        },
 
         'landing.footer.learn': { en: 'Learn', fr: 'Apprendre' },
         'landing.footer.community': { en: 'Community', fr: 'Communauté' },

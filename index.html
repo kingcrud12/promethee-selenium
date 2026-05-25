@@ -12,6 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('promethee-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body class="landing-page">
@@ -27,6 +35,7 @@
             <a href="home.html" class="nav-link" data-i18n="header.docs">Docs</a>
             <a href="tutorial.html" class="nav-link" data-i18n="header.tutorial">Tutorial</a>
             <a href="about.html" class="nav-link" data-i18n="header.about">About</a>
+            <a href="why-promethee.html" class="nav-link" data-i18n="header.why">Pourquoi Promethee</a>
         </nav>
         <div class="header-right">
             <a href="https://discord.gg/afNKcAjzx" target="_blank" rel="noopener noreferrer" class="social-link"
@@ -44,21 +53,75 @@
 
     <div class="main-container">
         <!-- Hero Section -->
-        <section class="hero-section">
-            <h1 class="hero-title" data-i18n="landing.hero.title">
-                <span class="highlight">Promethee-Selenium</span> enables reliable web automation for testing,
-                scripting, and AI agents.
-            </h1>
-            <p class="hero-subtitle" data-i18n="landing.hero.subtitle">
-                A robust, POM-based library designed to drive Chromium, Firefox, and WebKit — in your tests, your
-                scripts, and your agent workflows.
-            </p>
-            <div class="hero-actions">
-                <a href="home.html" class="btn-hero-primary" data-i18n="landing.hero.getStarted">Get started</a>
-                <a href="https://github.com/marne-tech/promethee-selenium" target="_blank" class="btn-hero-secondary">
-                    <i class="fa-brands fa-github"></i> <span data-i18n="landing.hero.star">Star</span> <span
-                        class="star-count">200+</span>
-                </a>
+        <section class="Hero lightbg">
+            <div class="Hero-gridContainer">
+                <div class="Hero-blurb">
+                    <h1 data-i18n="landing.hero.title">Build simple, secure, scalable tests with Promethee-Selenium</h1>
+                    <ul class="Hero-blurbList">
+                        <li>
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="currentColor"></path></svg>
+                            <span data-i18n="landing.hero.feature1">A robust, POM-based library designed for testing.</span>
+                        </li>
+                        <li>
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="currentColor"></path></svg>
+                            <span data-i18n="landing.hero.feature2">Drive Chromium, Firefox, and WebKit reliably.</span>
+                        </li>
+                        <li>
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8519 0.52594L3.89189 7.10404L1.14811 4.51081L0 5.59592L3.89189 9.27426L12 1.61105L10.8519 0.52594Z" fill="currentColor"></path></svg>
+                            <span data-i18n="landing.hero.feature3">Perfect for your scripts and agent workflows.</span>
+                        </li>
+                    </ul>
+                    <div class="Hero-actions">
+                        <div class="Hero-buttons"
+                            style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                            <a href="home.html" class="Primary" data-i18n="landing.hero.getStarted">Get Started</a>
+                            <a href="https://github.com/marne-tech/promethee-selenium" target="_blank"
+                                class="Secondary">
+                                <span data-i18n="landing.hero.github">Download</span>
+                            </a>
+                        </div>
+                        <div class="Hero-footnote">
+                            <p data-i18n="landing.hero.footnote1" style="font-size: 0.85rem; line-height: 1.4; color: var(--text-muted);">
+                                Download packages for 
+                                <a href="#" style="color: var(--accent-color); text-decoration: underline;">Windows 64-bit</a>,
+                                <a href="#" style="color: var(--accent-color); text-decoration: underline;">macOS</a>,
+                                <a href="#" style="color: var(--accent-color); text-decoration: underline;">Linux</a>, and
+                                <a href="#" style="color: var(--accent-color); text-decoration: underline;">more</a>
+                            </p>
+                            <p data-i18n="landing.hero.footnote2" style="font-size: 0.85rem; line-height: 1.4; color: var(--text-muted); margin-top: 0.5rem;">
+                                The <code>promethee</code> command by default downloads and authenticates modules using the Promethee module mirror run by Marne Tech. <a href="#" style="color: var(--accent-color); text-decoration: underline;">Learn more.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="Hero-gopher">
+                    <img src="assets/mascot.png" alt="Promethee Mascot">
+                </div>
+            </div>
+        </section>
+
+        <!-- Companies -->
+        <section class="WhoUses">
+            <div class="WhoUses-gridContainer">
+                <div class="WhoUses-header">
+                    <h2 class="WhoUses-headerH2" data-i18n="landing.companies.title">Companies using Promethee-Selenium
+                    </h2>
+                    <p class="WhoUses-subheader" data-i18n="landing.companies.subtitle">Organizations in every industry use Promethee to power their tests and
+                        automations</p>
+                </div>
+                <div class="WhoUsesCaseStudyList">
+                    <ul class="WhoUsesCaseStudyList-gridContainer" style="display: flex; justify-content: center; align-items: center; gap: 4rem; flex-wrap: wrap; list-style: none; padding: 0;">
+                        <li class="WhoUsesCaseStudyList-caseStudy" style="flex: 0 1 auto; background: transparent; border: none; padding: 0;">
+                            <img src="assets/OMEA.png" alt="OMEA ID" class="WhoUsesCaseStudyList-logo">
+                        </li>
+                        <li class="WhoUsesCaseStudyList-caseStudy" style="flex: 0 1 auto; background: transparent; border: none; padding: 0;">
+                            <img src="assets/img2.jpg" alt="M RÉSO" class="WhoUsesCaseStudyList-logo">
+                        </li>
+                        <li class="WhoUsesCaseStudyList-caseStudy" style="flex: 0 1 auto; background: transparent; border: none; padding: 0;">
+                            <img src="assets/img3.png" alt="TBM" class="WhoUsesCaseStudyList-logo">
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -272,21 +335,6 @@
                 WebKit on Linux, macOS, and Windows. Headless and headed. Also available for Python, .NET, and Java.</p>
         </section>
 
-        <!-- Companies -->
-        <section class="company-showcase">
-            <h3 data-i18n="landing.companies.title">Chosen by companies and open source projects</h3>
-            <div class="company-grid">
-                <span class="company-name">VS Code</span>
-                <span class="company-name">Bing</span>
-                <span class="company-name">Outlook</span>
-                <span class="company-name">Disney+ Hotstar</span>
-                <span class="company-name">Material UI</span>
-                <span class="company-name">ING</span>
-                <span class="company-name">Adobe</span>
-                <span class="company-name">React Navigation</span>
-                <span class="company-name">Accessibility Insights</span>
-            </div>
-        </section>
     </div>
 
     <footer class="landing-footer">

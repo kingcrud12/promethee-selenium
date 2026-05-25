@@ -12,6 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('promethee-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -27,6 +35,7 @@
             <a href="index.html" class="nav-link" data-i18n="header.features">Features</a>
             <a href="#" class="nav-link" data-i18n="header.installation">Installation</a>
             <a href="#" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
+            <a href="why-promethee.html" class="nav-link" data-i18n="header.why">Pourquoi Promethee</a>
         </nav>
         <div class="header-right">
             <button id="lang-toggle" class="lang-toggle">EN</button>

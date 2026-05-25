@@ -8,6 +8,14 @@
     <link rel="icon" href="assets/fire.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="assets/fire.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('promethee-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Top Header -->
@@ -22,6 +30,7 @@
             <a href="index.html#features" class="nav-link" data-i18n="header.features">Features</a>
             <a href="index.html#installation" class="nav-link" data-i18n="header.installation">Installation</a>
             <a href="index.html#quick-start" class="nav-link" data-i18n="header.quickStart">Quick Start</a>
+            <a href="why-promethee.html" class="nav-link" data-i18n="header.why">Pourquoi Promethee</a>
         </nav>
         <div class="header-right">
             <button id="lang-toggle" class="lang-toggle">EN</button>
